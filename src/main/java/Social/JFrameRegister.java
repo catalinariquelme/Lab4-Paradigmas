@@ -5,6 +5,8 @@
  */
 package Social;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ca_re
@@ -32,8 +34,8 @@ public class JFrameRegister extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jtfUserRegister = new javax.swing.JTextField();
+        jtfPasswordRegister = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -68,24 +70,24 @@ public class JFrameRegister extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(245, 245, 245));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setText("Elizabeth");
-        jTextField1.setToolTipText("");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtfUserRegister.setBackground(new java.awt.Color(245, 245, 245));
+        jtfUserRegister.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jtfUserRegister.setText("Elizabeth");
+        jtfUserRegister.setToolTipText("");
+        jtfUserRegister.setBorder(null);
+        jtfUserRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtfUserRegisterActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setBackground(new java.awt.Color(245, 245, 245));
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jPasswordField1.setText("Contraseña");
-        jPasswordField1.setBorder(null);
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        jtfPasswordRegister.setBackground(new java.awt.Color(245, 245, 245));
+        jtfPasswordRegister.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jtfPasswordRegister.setText("Contraseña");
+        jtfPasswordRegister.setBorder(null);
+        jtfPasswordRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                jtfPasswordRegisterActionPerformed(evt);
             }
         });
 
@@ -136,8 +138,8 @@ public class JFrameRegister extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfPasswordRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(112, Short.MAX_VALUE))
@@ -154,11 +156,11 @@ public class JFrameRegister extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtfUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtfPasswordRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
@@ -168,7 +170,7 @@ public class JFrameRegister extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
-        jTextField1.getAccessibleContext().setAccessibleName("");
+        jtfUserRegister.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -198,16 +200,22 @@ public class JFrameRegister extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Social socialNetwork = Social.socialNetworkExample();
+        String username = jtfUserRegister.getText();
+        String password = jtfPasswordRegister.getText();
+        //En el caso que exista algún error al ingresar, se muestra un error
+        if (socialNetwork.register(socialNetwork,username,password) == 0){
+            JOptionPane.showMessageDialog(this,"El usuario ya se encuentra registrado.","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jtfUserRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfUserRegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jtfUserRegisterActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void jtfPasswordRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfPasswordRegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_jtfPasswordRegisterActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
@@ -264,7 +272,7 @@ public class JFrameRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField jtfPasswordRegister;
+    private javax.swing.JTextField jtfUserRegister;
     // End of variables declaration//GEN-END:variables
 }

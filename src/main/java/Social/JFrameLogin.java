@@ -8,6 +8,7 @@ package Social;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -205,16 +206,18 @@ public class JFrameLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfUserLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
         Social socialNetwork = Social.socialNetworkExample();
         //Se obtiene la fecha del sistema y se convierte a string
         LocalDate today = LocalDate.now();
         String date = today.format(DateTimeFormatter.ofPattern("dd/MMM/yy"));
-        //Se crea un nuevo usuario
+        //Se crea un nuevo usuario para poder iniciar la función
         User user = new User(" ", " ", date,0, new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
         String username = jtfUserLogin.getText();
         String password = jtfPasswordLogin.getText();
+        //En el caso que exista algún error al ingresar, se muestra un error
         if (user.login(socialNetwork,username,password) == 0){
-            System.out.println("error");
+            JOptionPane.showMessageDialog(this,"Nombre de usuario o contraseña incorrectos.","ERROR",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
