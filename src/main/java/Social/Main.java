@@ -8,10 +8,9 @@ package Social;
 
 public class Main {
 
-
-    public static void main(String[] args) {
-        LoginJFrame open = new LoginJFrame();
+    public static void main(String[] args) {        
+        JFrameLogin open = new JFrameLogin();
         open.setVisible(true);
+        
     }
-    
 }
