@@ -67,11 +67,13 @@ public class JFrameSocial extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(56, 168, 153));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Mi perfil");
+        jButton6.setActionCommand("Mi perfil");
         jButton6.setBorder(null);
 
         jButton7.setBackground(new java.awt.Color(56, 168, 153));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Información de la autora");
+        jButton7.setActionCommand("Información de la autora");
         jButton7.setBorder(null);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -123,11 +125,6 @@ public class JFrameSocial extends javax.swing.JFrame {
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Nueva publicación");
         jButton4.setBorder(null);
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
-            }
-        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -208,12 +205,6 @@ public class JFrameSocial extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        JFramePost postJframe = new JFramePost();
-        postJframe.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
