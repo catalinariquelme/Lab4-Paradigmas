@@ -44,12 +44,15 @@ public class JFrameLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         jPasswordField2.setText("jPasswordField2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(819, 473));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(56, 168, 153));
@@ -124,16 +127,31 @@ public class JFrameLogin extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(162, 162, 162));
+        jLabel5.setText("¿Deseas salir?");
+
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(56, 174, 143));
+        jButton3.setText("Cerrar programa");
+        jButton3.setActionCommand("Cerrar programa");
+        jButton3.setBorder(null);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(92, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -147,13 +165,23 @@ public class JFrameLogin extends javax.swing.JFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel1))
                 .addGap(113, 113, 113))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jtfUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,12 +191,16 @@ public class JFrameLogin extends javax.swing.JFrame {
                 .addComponent(jtfPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jButton2))
-                .addGap(27, 27, 27))
+                    .addComponent(jButton2)
+                    .addComponent(jLabel5)
+                    .addComponent(jButton3))
+                .addGap(24, 24, 24))
         );
+
+        jButton3.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -219,6 +251,11 @@ public class JFrameLogin extends javax.swing.JFrame {
         if (user.login(socialNetwork,username,password) == 0){
             JOptionPane.showMessageDialog(this,"Nombre de usuario o contraseña incorrectos.","ERROR",JOptionPane.ERROR_MESSAGE);
         }
+        else{
+            JFrameSocial socialJframe = new JFrameSocial();
+            socialJframe.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -230,6 +267,14 @@ public class JFrameLogin extends javax.swing.JFrame {
         registerJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -272,10 +317,12 @@ public class JFrameLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField2;
