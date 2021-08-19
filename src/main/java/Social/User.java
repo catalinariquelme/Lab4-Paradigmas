@@ -84,6 +84,7 @@ public class User {
         return "Usuario:" + name;
     }
 
+    //1= se puedo | 0= no se pudo
     /**
      * Permite validar las credenciales del usuario en la red social antes de permitir el ingreso
      * @param socialNetwork red social
@@ -108,6 +109,7 @@ public class User {
                 activeUser.add(userList.get(i));
                 userList.remove(i);
                 System.out.println("Se inicio sesion con exito\n");
+                System.out.println(socialNetwork.toString(1));
                 return 1;
             }
         }
@@ -135,7 +137,7 @@ public class User {
      * Permite a un usuario con sesi?n iniciada en la red social realizar una nueva publicaci?n
      * @param socialNetwork red social
      */
-    public void post(Social socialNetwork) {
+    public void post(Social socialNetwork,String postType,String text) {
         //Se obtienen la lista de usuarios registrados en la plataforma
         ArrayList<User> userList = socialNetwork.getUserArrayList();
         //Se obtienen las publicaciones realizadas en la red social
@@ -151,14 +153,6 @@ public class User {
         Scanner scan = new Scanner(System.in);
         //Scanner lista de usuarios a los cuales va dirigido
         Scanner scan2 = new Scanner(System.in);
-
-        //Se escanea el texto del post
-        System.out.println("Ingrese tipo de la publicacion : ");
-        String postType = aux1.nextLine();
-
-        //Se escanea el texto del post
-        System.out.println("Ingrese contenido de la publicacion : ");
-        String text = aux2.nextLine();
 
         //Se pregunta si se desea dirigir la publicaci?n a alg?n usuario
         System.out.println("?Desea dirigir la publiacion a algun usuario?");
@@ -238,7 +232,7 @@ public class User {
      * Permite a un usuario (con sesi?n iniciada) poder seguir a otro usuario
      * @param socialNetwork red social
      */
-    public void follow(Social socialNetwork) {
+    public int follow(Social socialNetwork, String follow) {
         //Se obtienen el usuario activo en la red social
         ArrayList<User> activeUser = socialNetwork.getActiveUser();
         //Se obtienen los usuarios registrados en la red social
@@ -246,30 +240,19 @@ public class User {
         //Se obtiene los usuarios que sigue el usuario activo
         ArrayList<String> followList = socialNetwork.getActiveUser().get(0).getFollowersArrayList();
 
-        System.out.println("");
-        //Scanner usuario a seguir
-        Scanner aux1 = new Scanner(System.in);
-        //Condicional para mantener el while
-        boolean register = false;
-        while(!register) {
-            //Se escanea el usuario a seguir
-            System.out.println("Ingrese usuario a seguir : ");
-            String follow = aux1.nextLine();
-            //Se verifica que el usuario se encuentre registrado en la red social
-            User userAux = isRegister(socialNetwork,follow);
-            //El usuario que se quiere seguir no existe en la red social
-            if(userAux == null){
-                System.out.println("ERROR: El usuario no se encuentra registrado, intente nuevamente\n");
-                break;
-            }
-
-            //En caso de que exista se agrega el nombre del usuario activo a la lista de seguidores
-            else{
-                userAux.getFollowersArrayList().add(activeUser.get(0).getName());
-                System.out.println("Se comenzo a seguir a "+follow +" con exito\n");
-            }
-            register = true;
+        //Se verifica que el usuario se encuentre registrado en la red social
+        User userAux = isRegister(socialNetwork,follow);
+        //El usuario que se quiere seguir no existe en la red social
+        if(userAux == null){
+            return 0;
         }
+
+        //En caso de que exista se agrega el nombre del usuario activo a la lista de seguidores
+        else{
+            userAux.getFollowersArrayList().add(activeUser.get(0).getName());
+            System.out.println("Se comenzo a seguir a "+follow +" con exito\n");
+            return 1;
+        } 
     }
 
     /**

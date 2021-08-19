@@ -74,8 +74,10 @@ public class Social {
         //Se obtiene la fecha del sistema y se convierte a string
         LocalDate today = LocalDate.now();
         String date = today.format(DateTimeFormatter.ofPattern("dd/MMM/yy"));
+        //Se determina id del usuario
+        int newIdUser = socialNetwork.getUserArrayList().size() + 1;
         //Se crea un usuario nuevo
-        User newUser = new User(nameRegister,passwordRegister,date,0, new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
+        User newUser = new User(nameRegister,passwordRegister,date,newIdUser, new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
         // Se crea una variable para determinar si el usuario se encuentra ya registrado
         boolean found = false; //false: no esta registrado | true: usuario ya registrado
         //Se recorre la lista de usuario registrados en la red social
@@ -94,6 +96,7 @@ public class Social {
         else{
             userList.add(newUser);
             System.out.println("Se registro sin problemas\n");
+            System.out.println(socialNetwork.toString());
             return 1;
         }
     }

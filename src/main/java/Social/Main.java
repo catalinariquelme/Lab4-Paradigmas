@@ -5,12 +5,17 @@
  */
 package Social;
 
+import static Social.Social.socialNetworkExample;
+
 
 public class Main {
 
-    public static void main(String[] args) {        
-        JFrameLogin open = new JFrameLogin();
-        open.setVisible(true);
+    public static void main(String[] args) {     
+        Social socialNetwork = socialNetworkExample();
         
+        JFrameLogin loginJFframe = new JFrameLogin(socialNetwork);
+       
+        loginJFframe.setVisible(true);
+
     }
 }

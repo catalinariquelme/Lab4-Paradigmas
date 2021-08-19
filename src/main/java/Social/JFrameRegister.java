@@ -13,12 +13,15 @@ import javax.swing.JOptionPane;
  */
 public class JFrameRegister extends javax.swing.JFrame {
 
+    private Social socialNetwork;
+    
     /**
      * Creates new form RegisterJFrame
      */
-    public JFrameRegister() {
+    public JFrameRegister(Social s) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.socialNetwork = s;
     }
 
     /**
@@ -200,12 +203,18 @@ public class JFrameRegister extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Social socialNetwork = Social.socialNetworkExample();
+
         String username = jtfUserRegister.getText();
         String password = jtfPasswordRegister.getText();
         //En el caso que exista algún error al ingresar, se muestra un error
         if (socialNetwork.register(socialNetwork,username,password) == 0){
             JOptionPane.showMessageDialog(this,"El usuario ya se encuentra registrado.","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Usuario creado con exito","Nuevo usuario",JOptionPane.ERROR_MESSAGE);
+            JFrameLogin loginJframe = new JFrameLogin(socialNetwork);
+            loginJframe.setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -218,12 +227,12 @@ public class JFrameRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfPasswordRegisterActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        JFrameLogin loginJframe = new JFrameLogin();
-        loginJframe.setVisible(true);
+        //JFrameLogin loginJframe = new JFrameLogin();
+        //loginJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
 
@@ -258,7 +267,7 @@ public class JFrameRegister extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameRegister().setVisible(true);
+                //new JFrameRegister().setVisible(true);
             }
         });
     }
