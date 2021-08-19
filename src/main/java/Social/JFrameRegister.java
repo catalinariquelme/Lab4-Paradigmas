@@ -207,6 +207,11 @@ public class JFrameRegister extends javax.swing.JFrame {
         if (socialNetwork.register(socialNetwork,username,password) == 0){
             JOptionPane.showMessageDialog(this,"El usuario ya se encuentra registrado.","ERROR",JOptionPane.ERROR_MESSAGE);
         }
+        else{
+            JFrameLogin loginJframe = new JFrameLogin();
+            loginJframe.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jtfUserRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfUserRegisterActionPerformed
@@ -218,7 +223,7 @@ public class JFrameRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfPasswordRegisterActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -258,6 +263,7 @@ public class JFrameRegister extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                Social socialNetwork = Social.socialNetworkExample();
                 new JFrameRegister().setVisible(true);
             }
         });
