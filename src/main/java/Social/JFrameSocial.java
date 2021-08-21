@@ -77,6 +77,11 @@ public class JFrameSocial extends javax.swing.JFrame {
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Mi perfil");
         jButton6.setBorder(null);
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(56, 168, 153));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
@@ -249,7 +254,7 @@ public class JFrameSocial extends javax.swing.JFrame {
     }//GEN-LAST:event_postButtonMouseClicked
 
     private void commentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_commentButtonMouseClicked
-        JFrameComment commentJframe = new JFrameComment();
+        JFrameComment commentJframe = new JFrameComment(socialNetwork);
         commentJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_commentButtonMouseClicked
@@ -271,6 +276,12 @@ public class JFrameSocial extends javax.swing.JFrame {
         followJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_followButtonMouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
+        myProfileJFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments

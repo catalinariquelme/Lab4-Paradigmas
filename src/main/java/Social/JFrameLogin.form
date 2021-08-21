@@ -296,7 +296,6 @@
                   <Color blue="8f" green="ae" red="38" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cerrar programa"/>
-                <Property name="actionCommand" type="java.lang.String" value="Cerrar programa"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>

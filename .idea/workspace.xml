@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94e19d61-c464-4600-b11d-c0175de0d868" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameSocial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameSocial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/Social.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/Social.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/User.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1wmVlR1zLSnhEFvggDKMuedWgfE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Social.Main" />
+      <module name="Social.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Social.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94e19d61-c464-4600-b11d-c0175de0d868" name="Default Changelist" comment="" />
+      <created>1629063906067</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629063906067</updated>
+      <workItem from="1629063909558" duration="2961000" />
+      <workItem from="1629083883610" duration="314000" />
+      <workItem from="1629133575179" duration="30000" />
+      <workItem from="1629133875689" duration="630000" />
+      <workItem from="1629148557143" duration="15000" />
+      <workItem from="1629503404907" duration="1872000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -244,13 +244,13 @@ public class JFrameLogin extends javax.swing.JFrame {
         //Se obtiene la fecha del sistema y se convierte a string
         LocalDate today = LocalDate.now();
         String date = today.format(DateTimeFormatter.ofPattern("dd/MMM/yy"));
-        //Se crea un nuevo usuario para poder iniciar la función
-        User user = new User(" ", " ", date,0, new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
+        //Se crea un nuevo usuario para poder iniciar la funciï¿½n
+        User user = new User(" ", " ", date,0, new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
         String username = jtfUserLogin.getText();
         String password = jtfPasswordLogin.getText();
-        //En el caso que exista algún error al ingresar, se muestra un error
+        //En el caso que exista algï¿½n error al ingresar, se muestra un error
         if (user.login(socialNetwork,username,password) == 0){
-            JOptionPane.showMessageDialog(this,"Nombre de usuario o contraseña incorrectos.","ERROR",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,"Nombre de usuario o contraseÃ±a incorrectos.","ERROR",JOptionPane.ERROR_MESSAGE);
         }
         else{
           

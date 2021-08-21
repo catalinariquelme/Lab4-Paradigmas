@@ -14,18 +14,21 @@ public class User {
     private String dateUser; //Fecha de registro del usuario
     private int idUser; //id ?nico del usuario
     private final ArrayList<Post> postListUser; //Se almacenan las publicaciones realizadas por el usuario
-    private final ArrayList<String> followersArrayList; // Se almacenen los seguidores el usuario
+    private final ArrayList<String> followersArrayList; // Se almacenen los seguidores del usuario
+    private final ArrayList<String> followedArrayList;// Se almacenen los seguidos del usuario
     private final ArrayList<Post> feedUser; // Se almacenan las publicaciones compartidas y menciones por usuarios
 
-    public User(String name, String password, String dateUser, int idUser, ArrayList<Post> postListUser, ArrayList<String> followersArrayList, ArrayList<Post> feedUser) {
+    public User(String name, String password, String dateUser, int idUser, ArrayList<Post> postListUser, ArrayList<String> followersArrayList, ArrayList<String> followedArrayList, ArrayList<Post> feedUser) {
         this.name = name;
         this.password = password;
         this.dateUser = dateUser;
         this.idUser = idUser;
         this.postListUser = postListUser;
         this.followersArrayList = followersArrayList;
+        this.followedArrayList = followedArrayList;
         this.feedUser = feedUser;
     }
+
 
     public String getName() {
         return name;
@@ -67,6 +70,11 @@ public class User {
         return followersArrayList;
     }
 
+    public ArrayList<String> getFollowedArrayList() {
+        return followedArrayList;
+    }
+
+
     public ArrayList<Post> getFeedUser() {
         return feedUser;
     }
@@ -74,10 +82,10 @@ public class User {
     @Override
 
     public String toString() {
-        return "\nUser " + idUser+
+        return "\nUser " + idUser +
                 " Usuario:" + name
-                + " Seguidores:"+followersArrayList
-                + " Feed:"+feedUser;
+                + " Seguidores:" + followersArrayList
+                + " Feed:" + feedUser;
     }
 
     public String toString(Integer userOnly) {
@@ -85,11 +93,13 @@ public class User {
     }
 
     //1= se puedo | 0= no se pudo
+
     /**
      * Permite validar las credenciales del usuario en la red social antes de permitir el ingreso
+     *
      * @param socialNetwork red social
      */
-    public int login(Social socialNetwork,String nameRegister,String passwordRegister) {
+    public int login(Social socialNetwork, String nameRegister, String passwordRegister) {
         //Se obtienen los usuarios registrados en la plataforma
         ArrayList<User> userList = socialNetwork.getUserArrayList();
         //Se obtienen el usuario activo en la plataforma
@@ -119,6 +129,7 @@ public class User {
 
     /**
      * Permite la salida de un usuario con sesi?n activa en la red social
+     *
      * @param socialNetwork red social
      */
     public void logout(Social socialNetwork) {
@@ -135,9 +146,10 @@ public class User {
 
     /**
      * Permite a un usuario con sesi?n iniciada en la red social realizar una nueva publicaci?n
+     *
      * @param socialNetwork red social
      */
-    public void post(Social socialNetwork,String postType,String text) {
+    public void post(Social socialNetwork, String postType, String text,int option) {
         //Se obtienen la lista de usuarios registrados en la plataforma
         ArrayList<User> userList = socialNetwork.getUserArrayList();
         //Se obtienen las publicaciones realizadas en la red social
@@ -154,22 +166,10 @@ public class User {
         //Scanner lista de usuarios a los cuales va dirigido
         Scanner scan2 = new Scanner(System.in);
 
-        //Se pregunta si se desea dirigir la publicaci?n a alg?n usuario
-        System.out.println("?Desea dirigir la publiacion a algun usuario?");
-        System.out.println("1)Si    2)No");
-        int option = scan.nextInt();
-
         //Se crea una lista la cual guardar? los usuarios a los que se les dirigir? el post
         ArrayList<String> targetedUsers = new ArrayList<>();
         //El post ser? dirigido
-        if (option == 1){
-            System.out.println("Usuarios disponibles en la red social");
-            //A trav?s del ciclo se imprimen los usuarios disponibles en la red social
-            int i = 0;
-            while (i < socialNetwork.getUserArrayList().size()){
-                System.out.println(socialNetwork.getUserArrayList().get(i).toString(1));
-                i++;
-            }
+        if (option == 1) {
 
             boolean in = false;
             //Se realiza un ciclo con finalidad de ingresar una serie de usuarios
@@ -194,11 +194,11 @@ public class User {
             }
         }
         //El post NO ser? dirigido
-        else if (option == 2){
+        else if (option == 2) {
             System.out.println("No se dirigira a nadie");
         }
         //El usuario ingreso un n?mero err?neo
-        else{
+        else {
             System.out.println("Ingrese un opcion valida, intente nuevamente");
         }
 
@@ -210,15 +210,15 @@ public class User {
         LocalDate today = LocalDate.now();
         String date = today.format(DateTimeFormatter.ofPattern("dd/MMM/yy"));
         //Se crea un arreglo donde se guardaran futuros comentarios
-        ArrayList<Comment> comment= new ArrayList<>();
+        ArrayList<Comment> comment = new ArrayList<>();
         //Se crea una nueva publicaci?n con la informaci?n reunida
-        Post newPost = new Post(newIdPost, text, userName, date, postType,comment);
+        Post newPost = new Post(newIdPost, text, userName, date, postType, comment);
         postList.add(newPost);
 
-        if (option == 1){
+        if (option == 1) {
             int i = 0;
-            while (i < targetedUsers.size()){
-                User userAux = isRegister(socialNetwork,targetedUsers.get(i));
+            while (i < targetedUsers.size()) {
+                User userAux = isRegister(socialNetwork, targetedUsers.get(i));
                 ArrayList<Post> feedList = userAux.getFeedUser();
                 feedList.add(newPost);
                 i++;
@@ -230,6 +230,7 @@ public class User {
 
     /**
      * Permite a un usuario (con sesi?n iniciada) poder seguir a otro usuario
+     *
      * @param socialNetwork red social
      */
     public int follow(Social socialNetwork, String follow) {
@@ -241,25 +242,27 @@ public class User {
         ArrayList<String> followList = socialNetwork.getActiveUser().get(0).getFollowersArrayList();
 
         //Se verifica que el usuario se encuentre registrado en la red social
-        User userAux = isRegister(socialNetwork,follow);
+        User userAux = isRegister(socialNetwork, follow);
         //El usuario que se quiere seguir no existe en la red social
-        if(userAux == null){
+        if (userAux == null) {
             return 0;
         }
 
-        //En caso de que exista se agrega el nombre del usuario activo a la lista de seguidores
-        else{
+        //En caso de que exista se agrega el nombre del usuario activo a la lista de seguidores y seguidos por el usuario activo
+        else {
             userAux.getFollowersArrayList().add(activeUser.get(0).getName());
-            System.out.println("Se comenzo a seguir a "+follow +" con exito\n");
+            activeUser.get(0).getFollowedArrayList().add(userAux.getName());
+            System.out.println("Se comenzo a seguir a " + follow + " con exito\n");
             return 1;
-        } 
+        }
     }
 
     /**
      * Permite a un usuario (con sesi?n iniciada) compartir contenido de un usuario en su propio espacio o dirigido a otros usuarios.
+     *
      * @param socialNetwork red social
      */
-    public void share(Social socialNetwork){
+    public void share(Social socialNetwork) {
         //Se obtienen la lista de usuarios registrados en la plataforma
         ArrayList<User> userList = socialNetwork.getUserArrayList();
         //Se obtienen las publicaciones realizadas en la red social
@@ -273,7 +276,7 @@ public class User {
 
         //Condicional para mantener el while
         boolean register = false;
-        while(!register) {
+        while (!register) {
             //Se escanea el tipo de publicaci?n
             //Para este laboratorio SOLO se puede utilizar TEXTO
             System.out.println("Ingrese ID de la publicacion a compartir: ");
@@ -321,9 +324,10 @@ public class User {
 
     /**
      * Permite a un usuario con sesi?n iniciada en la plataforma comentar publicaciones y otros comentarios
+     *
      * @param socialNetwork red social
      */
-    public void comment(Social socialNetwork){
+    public void comment(Social socialNetwork) {
         //Se obtienen el usuario activo en la red social
         ArrayList<User> activeUser = socialNetwork.getActiveUser();
         //Se obtienen las publicaciones realizadas en la red social
@@ -339,7 +343,7 @@ public class User {
         //Se obtiene la fecha del sistema y se convierte a string
         LocalDate today = LocalDate.now();
         String date = today.format(DateTimeFormatter.ofPattern("dd/MMM/yy"));
-        ArrayList<Comment> comment= new ArrayList<>();
+        ArrayList<Comment> comment = new ArrayList<>();
 
         Scanner scan = new Scanner(System.in);
         //Scanner tipo de contenido
@@ -386,9 +390,7 @@ public class User {
                 System.out.println("Se realizo un comentario con exito\n");
                 in = true;
                 break;
-            }
-
-            else if (type == 2) {
+            } else if (type == 2) {
                 System.out.println("COMENTARIOS DISPONIBLES A COMENTAR");
                 int i = 0;
                 while (i < socialNetwork.getCommentArrayList().size()) {
@@ -416,12 +418,10 @@ public class User {
                 System.out.println("Se realizo un comentario con exito\n");
                 in = true;
                 break;
-            }
-            else if (type == 3) {
+            } else if (type == 3) {
                 in = true;
                 break;
-            }
-            else{
+            } else {
                 System.out.println("ERROR: opcion no valida, intente nuevamente");
             }
         }
@@ -429,20 +429,21 @@ public class User {
 
     /**
      * Permite buscar una publicaci?n a trav?s de su id
+     *
      * @param socialNetwork red social
-     * @param id id de la publicaci?n
+     * @param id            id de la publicaci?n
      * @return clase Post, en el caso de no estar registrado retorna null
      */
-    public Post idSearchPost(Social socialNetwork, String id){
+    public Post idSearchPost(Social socialNetwork, String id) {
         //Se convierte el id a entero para trabajar
         int idPost = Integer.parseInt(id);
         //Se obtienen las publicaciones realizadas en la red social
         ArrayList<Post> postList = socialNetwork.getPostArrayList();
         int i = 0;
         Post postAux = socialNetwork.getPostArrayList().get(i);
-        while(i<postList.size()){
+        while (i < postList.size()) {
             postAux = socialNetwork.getPostArrayList().get(i);
-            if(postAux.getIdPost() == idPost){
+            if (postAux.getIdPost() == idPost) {
                 return postAux;
             }
             i++;
@@ -452,20 +453,21 @@ public class User {
 
     /**
      * Permite buscar un comentario a trav?s de su id
+     *
      * @param socialNetwork red social
-     * @param id id del comentario
+     * @param id            id del comentario
      * @return clase Comment, en el caso de no estar registrado retorna null
      */
-    public Comment idSearchComment(Social socialNetwork, String id){
+    public Comment idSearchComment(Social socialNetwork, String id) {
         //Se convierte el id a entero para trabajar
         int idPost = Integer.parseInt(id);
         //Se obtienen las publicaciones realizadas en la red social
         ArrayList<Comment> commentList = socialNetwork.getCommentArrayList();
         int i = 0;
         Comment commentAux = socialNetwork.getCommentArrayList().get(i);
-        while(i<commentList.size()){
+        while (i < commentList.size()) {
             commentAux = socialNetwork.getCommentArrayList().get(i);
-            if(commentAux.getIdReaction() == idPost){
+            if (commentAux.getIdReaction() == idPost) {
                 return commentAux;
             }
             i++;
@@ -475,20 +477,21 @@ public class User {
 
     /**
      * Permite determinar si un usuario se encuentra registrado dentro de la red social
+     *
      * @param socialNetwork red social
-     * @param user usuario a revisar
+     * @param user          usuario a revisar
      * @return clase User, en el caso de no estar registrado retorna null
      */
-    public User isRegister(Social socialNetwork, String user){
+    public User isRegister(Social socialNetwork, String user) {
         // Se crea una variable para determinar si el usuario se encuentra ya registrado
         boolean found = false; //false: no esta registrado | true: usuario ya registrado
         //Se recorre la lista de usuario registrados en la red social
         int i = 0;
         User userAux = socialNetwork.getUserArrayList().get(i);
-        while(i < socialNetwork.getUserArrayList().size()){
+        while (i < socialNetwork.getUserArrayList().size()) {
             userAux = socialNetwork.getUserArrayList().get(i);
             //Si se encuentra coincidencia el verificador toma el valor true
-            if(userAux.getName().equals(user)){
+            if (userAux.getName().equals(user)) {
                 found = true;
                 return userAux;
             }
@@ -498,19 +501,19 @@ public class User {
     }
 
     /**
-     *
      * Permite determinar si un usuario es seguidor del usuario activo
+     *
      * @param socialNetwork red social
-     * @param user usuario a revisar
+     * @param user          usuario a revisar
      * @return boolean 1(es seguido) | 2(no es seguido)
      */
-    public boolean isFollow(Social socialNetwork,String user){
+    public boolean isFollow(Social socialNetwork, String user) {
         //Se obtiene los usuarios que sigue el usuario activo
         ArrayList<String> followList = socialNetwork.getActiveUser().get(0).getFollowersArrayList();
         //Se verifica que el usuario ingresado no se siga nuevamente
         int j = 0;
         boolean isFollow = false;
-        while(j < followList.size()) {
+        while (j < followList.size()) {
             if (followList.get(j).equals(user)) {
                 isFollow = true;
                 break;
@@ -519,4 +522,5 @@ public class User {
         }
         return isFollow;
     }
+
 }
