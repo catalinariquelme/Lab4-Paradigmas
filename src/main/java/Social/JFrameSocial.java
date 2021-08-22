@@ -35,13 +35,13 @@ public class JFrameSocial extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         LogoutButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        myProfileButton = new javax.swing.JButton();
+        infoButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         commentButton = new javax.swing.JButton();
         postButton = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        shareButton = new javax.swing.JButton();
         followButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,20 +73,20 @@ public class JFrameSocial extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(56, 168, 153));
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Mi perfil");
-        jButton6.setBorder(null);
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+        myProfileButton.setBackground(new java.awt.Color(56, 168, 153));
+        myProfileButton.setForeground(new java.awt.Color(255, 255, 255));
+        myProfileButton.setText("Mi perfil");
+        myProfileButton.setBorder(null);
+        myProfileButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton6MouseClicked(evt);
+                myProfileButtonMouseClicked(evt);
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(56, 168, 153));
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Información de la autora");
-        jButton7.setBorder(null);
+        infoButton.setBackground(new java.awt.Color(56, 168, 153));
+        infoButton.setForeground(new java.awt.Color(255, 255, 255));
+        infoButton.setText("Información de la autora");
+        infoButton.setBorder(null);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -95,8 +95,8 @@ public class JFrameSocial extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7)
+                    .addComponent(myProfileButton)
+                    .addComponent(infoButton)
                     .addComponent(LogoutButton)
                     .addComponent(exitButton))
                 .addGap(18, 18, 18))
@@ -105,9 +105,9 @@ public class JFrameSocial extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jButton6)
+                .addComponent(myProfileButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
-                .addComponent(jButton7)
+                .addComponent(infoButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LogoutButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -159,11 +159,11 @@ public class JFrameSocial extends javax.swing.JFrame {
         jButton5.setText("Ver red social");
         jButton5.setBorder(null);
 
-        jButton8.setBackground(new java.awt.Color(56, 168, 153));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Compartir publicación");
-        jButton8.setBorder(null);
+        shareButton.setBackground(new java.awt.Color(56, 168, 153));
+        shareButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        shareButton.setForeground(new java.awt.Color(255, 255, 255));
+        shareButton.setText("Compartir publicación");
+        shareButton.setBorder(null);
 
         followButton.setBackground(new java.awt.Color(56, 168, 153));
         followButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -195,7 +195,7 @@ public class JFrameSocial extends javax.swing.JFrame {
                         .addGap(51, 51, 51)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(commentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(shareButton, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(postButton, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(followButton, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -212,7 +212,7 @@ public class JFrameSocial extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(commentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(shareButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(followButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -277,11 +277,11 @@ public class JFrameSocial extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_followButtonMouseClicked
 
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+    private void myProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButtonMouseClicked
         JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
         myProfileJFrame.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton6MouseClicked
+    }//GEN-LAST:event_myProfileButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -325,13 +325,13 @@ public class JFrameSocial extends javax.swing.JFrame {
     private javax.swing.JButton commentButton;
     private javax.swing.JButton exitButton;
     private javax.swing.JButton followButton;
+    private javax.swing.JButton infoButton;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton myProfileButton;
     private javax.swing.JButton postButton;
+    private javax.swing.JButton shareButton;
     // End of variables declaration//GEN-END:variables
 }

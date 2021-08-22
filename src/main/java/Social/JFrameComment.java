@@ -33,12 +33,12 @@ public class JFrameComment extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        logoutButton1 = new javax.swing.JButton();
+        exitButton2 = new javax.swing.JButton();
+        myProfileButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        menuButton = new javax.swing.JButton();
+        commentButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -53,28 +53,28 @@ public class JFrameComment extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(56, 170, 151));
 
-        jButton1.setBackground(new java.awt.Color(56, 168, 153));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cerrar sesión");
-        jButton1.setBorder(null);
+        logoutButton1.setBackground(new java.awt.Color(56, 168, 153));
+        logoutButton1.setForeground(new java.awt.Color(255, 255, 255));
+        logoutButton1.setText("Cerrar sesión");
+        logoutButton1.setBorder(null);
 
-        jButton2.setBackground(new java.awt.Color(56, 168, 153));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Salir del programa");
-        jButton2.setBorder(null);
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        exitButton2.setBackground(new java.awt.Color(56, 168, 153));
+        exitButton2.setForeground(new java.awt.Color(255, 255, 255));
+        exitButton2.setText("Salir del programa");
+        exitButton2.setBorder(null);
+        exitButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                exitButton2MouseClicked(evt);
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(56, 168, 153));
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Mi perfil");
-        jButton6.setBorder(null);
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+        myProfileButton6.setBackground(new java.awt.Color(56, 168, 153));
+        myProfileButton6.setForeground(new java.awt.Color(255, 255, 255));
+        myProfileButton6.setText("Mi perfil");
+        myProfileButton6.setBorder(null);
+        myProfileButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton6MouseClicked(evt);
+                myProfileButton6MouseClicked(evt);
             }
         });
 
@@ -85,20 +85,20 @@ public class JFrameComment extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(myProfileButton6)
+                    .addComponent(logoutButton1)
+                    .addComponent(exitButton2))
                 .addGap(50, 50, 50))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jButton6)
+                .addComponent(myProfileButton6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(logoutButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(exitButton2)
                 .addGap(45, 45, 45))
         );
 
@@ -107,32 +107,32 @@ public class JFrameComment extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(56, 170, 151));
         jLabel1.setText("Nuevo comentario");
 
-        jButton9.setBackground(new java.awt.Color(255, 255, 255));
-        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(56, 174, 143));
-        jButton9.setText("Regresar al menú");
-        jButton9.setBorder(null);
-        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuButton.setBackground(new java.awt.Color(255, 255, 255));
+        menuButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menuButton.setForeground(new java.awt.Color(56, 174, 143));
+        menuButton.setText("Regresar al menú");
+        menuButton.setBorder(null);
+        menuButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton9MouseClicked(evt);
+                menuButtonMouseClicked(evt);
             }
         });
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                menuButtonActionPerformed(evt);
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(56, 168, 153));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Comentar");
-        jButton10.setToolTipText("");
-        jButton10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, java.awt.Color.white));
-        jButton10.setBorderPainted(false);
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        commentButton.setBackground(new java.awt.Color(56, 168, 153));
+        commentButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        commentButton.setForeground(new java.awt.Color(255, 255, 255));
+        commentButton.setText("Comentar");
+        commentButton.setToolTipText("");
+        commentButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, java.awt.Color.white));
+        commentButton.setBorderPainted(false);
+        commentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                commentButtonActionPerformed(evt);
             }
         });
 
@@ -157,14 +157,14 @@ public class JFrameComment extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(menuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(101, 101, 101)
-                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(commentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,9 +196,9 @@ public class JFrameComment extends javax.swing.JFrame {
                 .addGap(3, 3, 3)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(85, 85, 85)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(commentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(jButton9)
+                .addComponent(menuButton)
                 .addGap(19, 19, 19))
         );
 
@@ -218,29 +218,29 @@ public class JFrameComment extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void exitButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton2MouseClicked
         this.dispose();
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_exitButton2MouseClicked
 
-    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+    private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
         JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
         socialJframe.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton9MouseClicked
+    }//GEN-LAST:event_menuButtonMouseClicked
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
 
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_menuButtonActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void commentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commentButtonActionPerformed
         Social socialNetwork = Social.socialNetworkExample();
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_commentButtonActionPerformed
 
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+    private void myProfileButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButton6MouseClicked
         JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
         myProfileJFrame.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton6MouseClicked
+    }//GEN-LAST:event_myProfileButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -278,11 +278,8 @@ public class JFrameComment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton commentButton;
+    private javax.swing.JButton exitButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -292,5 +289,8 @@ public class JFrameComment extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton logoutButton1;
+    private javax.swing.JButton menuButton;
+    private javax.swing.JButton myProfileButton6;
     // End of variables declaration//GEN-END:variables
 }

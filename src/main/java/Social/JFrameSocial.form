@@ -61,7 +61,7 @@
                           <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="commentButton" min="-2" pref="210" max="-2" attributes="0"/>
-                              <Component id="jButton8" min="-2" pref="210" max="-2" attributes="0"/>
+                              <Component id="shareButton" min="-2" pref="210" max="-2" attributes="0"/>
                               <Component id="postButton" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
                               <Component id="jButton5" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
                               <Component id="followButton" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
@@ -83,7 +83,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="commentButton" min="-2" pref="48" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton8" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="shareButton" min="-2" pref="48" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="followButton" min="-2" pref="48" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -107,8 +107,8 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="24" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                          <Component id="myProfileButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="infoButton" min="-2" max="-2" attributes="0"/>
                           <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
                           <Component id="exitButton" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -120,9 +120,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                      <Component id="myProfileButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="288" max="32767" attributes="0"/>
-                      <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                      <Component id="infoButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="LogoutButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -167,7 +167,7 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="exitButtonMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="myProfileButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="a8" red="38" type="rgb"/>
@@ -181,10 +181,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton6MouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="myProfileButtonMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="infoButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="a8" red="38" type="rgb"/>
@@ -274,7 +274,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
+        <Component class="javax.swing.JButton" name="shareButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="a8" red="38" type="rgb"/>
