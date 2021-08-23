@@ -5,6 +5,7 @@
  */
 package View;
 
+import Social.Comment;
 import Social.Post;
 import Social.Social;
 import Social.User;
@@ -29,6 +30,24 @@ public class JFrameMyProfile extends javax.swing.JFrame {
             postTable.addRow(row);
         }
         
+        //Tabla relacionada con los comentarios
+        DefaultTableModel commentTable = (DefaultTableModel) myPostTable.getModel();
+        ArrayList<Comment> commentList = socialNetwork.getActiveUser().get(0).getCommentListUser(); //Se obtienen los post realizados por el usuario
+
+        for(Comment date : commentList){
+            Object [] row = new Object[]{date.getIdReaction(),date.getContentReaction(),date.getDateReaction(),date.getTypeReaction()};
+            commentTable.addRow(row);
+        }
+        
+        //Tabla relacionada con los comentarios
+        DefaultTableModel shareTable = (DefaultTableModel) myShareTable.getModel();
+        ArrayList<Post> shareList = socialNetwork.getActiveUser().get(0).getShareArrayList(); //Se obtienen los post realizados por el usuario
+
+        for(Post date : shareList){
+            Object [] row = new Object[]{date.getIdPost(),date.getContentPost(),date.getDatePost(),date.getTypePost()};
+            shareTable.addRow(row);
+        }
+        
         //Tabla relacionada con los seguidos
         DefaultTableModel followedTable = (DefaultTableModel) myFollowedTable.getModel();
         ArrayList<String> followedList = socialNetwork.getActiveUser().get(0).getFollowedArrayList();//Se obtienen los seguidos por el usuario
@@ -48,15 +67,6 @@ public class JFrameMyProfile extends javax.swing.JFrame {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /**
      * Creates new form JFrameMyProfile
      */
@@ -66,14 +76,7 @@ public class JFrameMyProfile extends javax.swing.JFrame {
         this.socialNetwork = s;
         loadTable();
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -85,10 +88,10 @@ public class JFrameMyProfile extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        logoutButton = new javax.swing.JButton();
+        exitButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
+        menuButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         myPostTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -97,10 +100,13 @@ public class JFrameMyProfile extends javax.swing.JFrame {
         myFollowerTable = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        myPostTable2 = new javax.swing.JTable();
+        myCommentTable = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         myFollowedTable = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        myShareTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,28 +115,28 @@ public class JFrameMyProfile extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(56, 170, 151));
 
-        jButton1.setBackground(new java.awt.Color(56, 168, 153));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cerrar sesión");
-        jButton1.setBorder(null);
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        logoutButton.setBackground(new java.awt.Color(56, 168, 153));
+        logoutButton.setForeground(new java.awt.Color(255, 255, 255));
+        logoutButton.setText("Cerrar sesión");
+        logoutButton.setBorder(null);
+        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                logoutButtonMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                logoutButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(56, 168, 153));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Salir del programa");
-        jButton2.setBorder(null);
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        exitButton.setBackground(new java.awt.Color(56, 168, 153));
+        exitButton.setForeground(new java.awt.Color(255, 255, 255));
+        exitButton.setText("Salir del programa");
+        exitButton.setBorder(null);
+        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                exitButtonMouseClicked(evt);
             }
         });
 
@@ -139,20 +145,20 @@ public class JFrameMyProfile extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(logoutButton)
+                    .addComponent(exitButton))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(logoutButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
-                .addGap(75, 75, 75))
+                .addComponent(exitButton)
+                .addGap(21, 21, 21))
         );
 
         jLabel1.setBackground(new java.awt.Color(56, 170, 151));
@@ -160,19 +166,19 @@ public class JFrameMyProfile extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(56, 170, 151));
         jLabel1.setText("Mi perfil");
 
-        jButton9.setBackground(new java.awt.Color(255, 255, 255));
-        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(56, 174, 143));
-        jButton9.setText("Regresar al menú");
-        jButton9.setBorder(null);
-        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuButton.setBackground(new java.awt.Color(255, 255, 255));
+        menuButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menuButton.setForeground(new java.awt.Color(56, 174, 143));
+        menuButton.setText("Regresar al menú");
+        menuButton.setBorder(null);
+        menuButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton9MouseClicked(evt);
+                menuButtonMouseClicked(evt);
             }
         });
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                menuButtonActionPerformed(evt);
             }
         });
 
@@ -230,7 +236,7 @@ public class JFrameMyProfile extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(56, 170, 151));
         jLabel4.setText("Comentarios");
 
-        myPostTable2.setModel(new javax.swing.table.DefaultTableModel(
+        myCommentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -238,14 +244,14 @@ public class JFrameMyProfile extends javax.swing.JFrame {
                 "ID", "Contenido", "Fecha", "Tipo"
             }
         ));
-        jScrollPane3.setViewportView(myPostTable2);
-        if (myPostTable2.getColumnModel().getColumnCount() > 0) {
-            myPostTable2.getColumnModel().getColumn(0).setResizable(false);
-            myPostTable2.getColumnModel().getColumn(1).setHeaderValue("Contenido");
-            myPostTable2.getColumnModel().getColumn(2).setResizable(false);
-            myPostTable2.getColumnModel().getColumn(2).setHeaderValue("Fecha");
-            myPostTable2.getColumnModel().getColumn(3).setResizable(false);
-            myPostTable2.getColumnModel().getColumn(3).setHeaderValue("Tipo");
+        jScrollPane3.setViewportView(myCommentTable);
+        if (myCommentTable.getColumnModel().getColumnCount() > 0) {
+            myCommentTable.getColumnModel().getColumn(0).setResizable(false);
+            myCommentTable.getColumnModel().getColumn(1).setHeaderValue("Contenido");
+            myCommentTable.getColumnModel().getColumn(2).setResizable(false);
+            myCommentTable.getColumnModel().getColumn(2).setHeaderValue("Fecha");
+            myCommentTable.getColumnModel().getColumn(3).setResizable(false);
+            myCommentTable.getColumnModel().getColumn(3).setHeaderValue("Tipo");
         }
 
         jLabel5.setBackground(new java.awt.Color(56, 170, 151));
@@ -274,6 +280,29 @@ public class JFrameMyProfile extends javax.swing.JFrame {
             myFollowedTable.getColumnModel().getColumn(0).setResizable(false);
         }
 
+        jLabel6.setBackground(new java.awt.Color(56, 170, 151));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(56, 170, 151));
+        jLabel6.setText("Compartidos");
+
+        myShareTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Contenido", "Fecha", "Tipo"
+            }
+        ));
+        jScrollPane5.setViewportView(myShareTable);
+        if (myShareTable.getColumnModel().getColumnCount() > 0) {
+            myShareTable.getColumnModel().getColumn(0).setResizable(false);
+            myShareTable.getColumnModel().getColumn(1).setHeaderValue("Contenido");
+            myShareTable.getColumnModel().getColumn(2).setResizable(false);
+            myShareTable.getColumnModel().getColumn(2).setHeaderValue("Fecha");
+            myShareTable.getColumnModel().getColumn(3).setResizable(false);
+            myShareTable.getColumnModel().getColumn(3).setHeaderValue("Tipo");
+        }
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -284,30 +313,34 @@ public class JFrameMyProfile extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(menuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel1)
                 .addGap(14, 14, 14)
                 .addComponent(jLabel3)
@@ -317,17 +350,21 @@ public class JFrameMyProfile extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(jButton9)
-                .addGap(71, 71, 71))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(menuButton)
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -338,37 +375,37 @@ public class JFrameMyProfile extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
 
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_menuButtonActionPerformed
 
-    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+    private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
         JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
         socialJframe.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton9MouseClicked
+    }//GEN-LAST:event_menuButtonMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
         this.dispose();
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_exitButtonMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         activeUser.logout(socialNetwork);
         JFrameLogin loginJFrame = new JFrameLogin(socialNetwork);
         loginJFrame.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_logoutButtonMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,23 +443,26 @@ public class JFrameMyProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton exitButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JButton logoutButton;
+    private javax.swing.JButton menuButton;
+    private javax.swing.JTable myCommentTable;
     private javax.swing.JTable myFollowedTable;
     private javax.swing.JTable myFollowerTable;
     private javax.swing.JTable myPostTable;
-    private javax.swing.JTable myPostTable2;
+    private javax.swing.JTable myShareTable;
     // End of variables declaration//GEN-END:variables
 }

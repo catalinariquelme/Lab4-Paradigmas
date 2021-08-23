@@ -38,8 +38,8 @@ public class JFrameRegister extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         registerButton = new javax.swing.JButton();
-        jtfUserRegister = new javax.swing.JTextField();
-        jtfPasswordRegister = new javax.swing.JPasswordField();
+        userRegister = new javax.swing.JTextField();
+        passwordRegister = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -73,24 +73,24 @@ public class JFrameRegister extends javax.swing.JFrame {
             }
         });
 
-        jtfUserRegister.setBackground(new java.awt.Color(245, 245, 245));
-        jtfUserRegister.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jtfUserRegister.setText("Elizabeth");
-        jtfUserRegister.setToolTipText("");
-        jtfUserRegister.setBorder(null);
-        jtfUserRegister.addActionListener(new java.awt.event.ActionListener() {
+        userRegister.setBackground(new java.awt.Color(245, 245, 245));
+        userRegister.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        userRegister.setText("Elizabeth");
+        userRegister.setToolTipText("");
+        userRegister.setBorder(null);
+        userRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfUserRegisterActionPerformed(evt);
+                userRegisterActionPerformed(evt);
             }
         });
 
-        jtfPasswordRegister.setBackground(new java.awt.Color(245, 245, 245));
-        jtfPasswordRegister.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jtfPasswordRegister.setText("Contraseña");
-        jtfPasswordRegister.setBorder(null);
-        jtfPasswordRegister.addActionListener(new java.awt.event.ActionListener() {
+        passwordRegister.setBackground(new java.awt.Color(245, 245, 245));
+        passwordRegister.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        passwordRegister.setText("Contraseña");
+        passwordRegister.setBorder(null);
+        passwordRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfPasswordRegisterActionPerformed(evt);
+                passwordRegisterActionPerformed(evt);
             }
         });
 
@@ -141,8 +141,8 @@ public class JFrameRegister extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtfUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtfPasswordRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(112, Short.MAX_VALUE))
@@ -159,11 +159,11 @@ public class JFrameRegister extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jtfUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtfPasswordRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(registerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
@@ -173,7 +173,7 @@ public class JFrameRegister extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
-        jtfUserRegister.getAccessibleContext().setAccessibleName("");
+        userRegister.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -204,35 +204,35 @@ public class JFrameRegister extends javax.swing.JFrame {
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
 
-        String username = jtfUserRegister.getText();
-        String password = jtfPasswordRegister.getText();
+        String username = userRegister.getText();
+        String password = passwordRegister.getText();
         //En el caso que exista algún error al ingresar, se muestra un error
         if (socialNetwork.register(socialNetwork,username,password) == 0){
             JOptionPane.showMessageDialog(this,"El usuario ya se encuentra registrado.","ERROR",JOptionPane.ERROR_MESSAGE);
         }
         else{
-            JOptionPane.showMessageDialog(this,"Usuario creado con exito","Nuevo usuario",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Usuario registrado con exito");
             JFrameLogin loginJframe = new JFrameLogin(socialNetwork);
             loginJframe.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_registerButtonActionPerformed
 
-    private void jtfUserRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfUserRegisterActionPerformed
+    private void userRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userRegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtfUserRegisterActionPerformed
+    }//GEN-LAST:event_userRegisterActionPerformed
 
-    private void jtfPasswordRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfPasswordRegisterActionPerformed
+    private void passwordRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordRegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtfPasswordRegisterActionPerformed
+    }//GEN-LAST:event_passwordRegisterActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
-        //JFrameLogin loginJframe = new JFrameLogin();
-        //loginJframe.setVisible(true);
+        JFrameLogin loginJframe = new JFrameLogin(socialNetwork);
+        loginJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_loginButtonMouseClicked
 
@@ -279,9 +279,9 @@ public class JFrameRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jtfPasswordRegister;
-    private javax.swing.JTextField jtfUserRegister;
     private javax.swing.JButton loginButton;
+    private javax.swing.JPasswordField passwordRegister;
     private javax.swing.JButton registerButton;
+    private javax.swing.JTextField userRegister;
     // End of variables declaration//GEN-END:variables
 }

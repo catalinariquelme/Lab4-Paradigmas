@@ -8,6 +8,15 @@ public class Reaction {
     private String contentReaction; //Contenido de la reacci?n
     private String typeReaction; //Tipo de reacci?n (TEXTO)
 
+    /**
+     * Constructor Clase Reaction
+     *
+     * @param idReaction id reaccion
+     * @param authorReaction autor reaccion
+     * @param dateReaction fecha de registro reaccion
+     * @param contentReaction contenido reaccion
+     * @param typeReaction tipo de reaccion
+     */
     public Reaction(int idReaction, String authorReaction, String dateReaction, String contentReaction, String typeReaction) {
         this.idReaction = idReaction;
         this.authorReaction = authorReaction;

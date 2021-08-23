@@ -6,15 +6,48 @@
 
 package View;
 
+import Social.Comment;
+import Social.Post;
+import Social.Social;
+import Social.User;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+
 /**
  *
  * @author ca_re
  */
 public class JFrameShare extends javax.swing.JFrame {
 
+    private Social socialNetwork;
+
+        public void loadTable(){
+        //Tabla relacionada con los post en la red social
+        DefaultTableModel postTable = (DefaultTableModel) postSocialTable.getModel();
+        ArrayList<Post> postList = socialNetwork.getPostArrayList(); //Se obtienen los post realizados en la red social
+
+        for(Post date : postList){
+            Object [] row = new Object[]{date.getIdPost(),date.getContentPost(),date.getAuthorPost(),date.getDatePost(),date.getTypePost()};
+            postTable.addRow(row);
+        }
+        //Tabla relacionada con los seguidos
+        DefaultTableModel followedTable = (DefaultTableModel) myFollowedTable.getModel();
+        ArrayList<String> followedList = socialNetwork.getActiveUser().get(0).getFollowedArrayList();//Se obtienen los seguidos por el usuario
+
+        for(String date : followedList){
+            Object [] row = new Object[]{date};
+            followedTable.addRow(row);
+        }
+    }
+    
     /** Creates new form JFrameShare */
-    public JFrameShare() {
+    public JFrameShare(Social s) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.socialNetwork = s;
+        loadTable();
     }
 
     /** This method is called from within the constructor to
@@ -26,21 +59,365 @@ public class JFrameShare extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        logoutButton = new javax.swing.JButton();
+        exitButton = new javax.swing.JButton();
+        myProfileButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        menuButton = new javax.swing.JButton();
+        shareButton = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        postSocialTable = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        myFollowedTable = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        taggedUsersTable = new javax.swing.JTable();
+        tagged = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        addButton = new javax.swing.JButton();
+        idShare = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 473));
+
+        jPanel3.setBackground(new java.awt.Color(56, 170, 151));
+
+        logoutButton.setBackground(new java.awt.Color(56, 168, 153));
+        logoutButton.setForeground(new java.awt.Color(255, 255, 255));
+        logoutButton.setText("Cerrar sesión");
+        logoutButton.setBorder(null);
+        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutButtonMouseClicked(evt);
+            }
+        });
+
+        exitButton.setBackground(new java.awt.Color(56, 168, 153));
+        exitButton.setForeground(new java.awt.Color(255, 255, 255));
+        exitButton.setText("Salir del programa");
+        exitButton.setBorder(null);
+        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitButtonMouseClicked(evt);
+            }
+        });
+
+        myProfileButton.setBackground(new java.awt.Color(56, 168, 153));
+        myProfileButton.setForeground(new java.awt.Color(255, 255, 255));
+        myProfileButton.setText("Mi perfil");
+        myProfileButton.setBorder(null);
+        myProfileButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                myProfileButtonMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(myProfileButton)
+                    .addComponent(logoutButton)
+                    .addComponent(exitButton))
+                .addGap(50, 50, 50))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(myProfileButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logoutButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(exitButton)
+                .addGap(29, 29, 29))
+        );
+
+        jLabel1.setBackground(new java.awt.Color(56, 170, 151));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(56, 170, 151));
+        jLabel1.setText("Compartir");
+
+        menuButton.setBackground(new java.awt.Color(255, 255, 255));
+        menuButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        menuButton.setForeground(new java.awt.Color(56, 174, 143));
+        menuButton.setText("Regresar al menú");
+        menuButton.setBorder(null);
+        menuButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuButtonMouseClicked(evt);
+            }
+        });
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuButtonActionPerformed(evt);
+            }
+        });
+
+        shareButton.setBackground(new java.awt.Color(56, 168, 153));
+        shareButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        shareButton.setForeground(new java.awt.Color(255, 255, 255));
+        shareButton.setText("Compartir");
+        shareButton.setToolTipText("");
+        shareButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, java.awt.Color.white));
+        shareButton.setBorderPainted(false);
+        shareButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shareButtonActionPerformed(evt);
+            }
+        });
+
+        postSocialTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Contenido", "Autor", "Fecha", "Tipo"
+            }
+        ));
+        jScrollPane3.setViewportView(postSocialTable);
+
+        jLabel5.setBackground(new java.awt.Color(56, 170, 151));
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(56, 170, 151));
+        jLabel5.setText("Publicaciones");
+
+        myFollowedTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(myFollowedTable);
+
+        jLabel6.setBackground(new java.awt.Color(56, 170, 151));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(56, 170, 151));
+        jLabel6.setText("Seguidos");
+
+        taggedUsersTable.setBackground(new java.awt.Color(245, 245, 245));
+        taggedUsersTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        taggedUsersTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario"
+            }
+        ));
+        taggedUsersTable.setRequestFocusEnabled(false);
+        jScrollPane1.setViewportView(taggedUsersTable);
+
+        tagged.setBackground(new java.awt.Color(245, 245, 245));
+        tagged.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tagged.setBorder(null);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(162, 162, 162));
+        jLabel7.setText("¿A quien?");
+
+        addButton.setBackground(new java.awt.Color(56, 168, 153));
+        addButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
+        addButton.setText("Agregar");
+        addButton.setToolTipText("");
+        addButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, java.awt.Color.white));
+        addButton.setBorderPainted(false);
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
+
+        idShare.setBackground(new java.awt.Color(245, 245, 245));
+        idShare.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        idShare.setBorder(null);
+
+        jLabel8.setBackground(new java.awt.Color(162, 162, 162));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setText("Id");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(menuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(38, 38, 38)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(idShare, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(8, 8, 8))
+                                            .addComponent(tagged, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(26, 26, 26)
+                                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 24, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(shareButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idShare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tagged, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(shareButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(menuButton)
+                .addGap(28, 28, 28))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
+        User activeUser = socialNetwork.getActiveUser().get(0);
+        activeUser.logout(socialNetwork);
+        JFrameLogin loginJFrame = new JFrameLogin(socialNetwork);
+        loginJFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoutButtonMouseClicked
+
+    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_exitButtonMouseClicked
+
+    private void myProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButtonMouseClicked
+        JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
+        myProfileJFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_myProfileButtonMouseClicked
+
+    private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
+        JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
+        socialJframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_menuButtonMouseClicked
+
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
+
+    }//GEN-LAST:event_menuButtonActionPerformed
+
+    private void shareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shareButtonActionPerformed
+        User activeUser = socialNetwork.getActiveUser().get(0);
+        ArrayList<String>tagged = new ArrayList();
+        String id = idShare.getText(); //Se obtiene el id del comentario
+        
+        //Se recolecta la informacion de la tabla
+        for(int i = 0; i< taggedUsersTable.getRowCount();i++){
+            tagged.add(taggedUsersTable.getValueAt(i,0).toString());
+        }
+        
+        //Se genera el comparte la publicacion
+        if (activeUser.share(socialNetwork,id,tagged) == 0){
+            JOptionPane.showMessageDialog(this,"No se puedo compartir la publicacion","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Publicacion compartida con exito");
+            JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
+            socialJframe.setVisible(true);
+            this.dispose();
+        }
+        JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
+        socialJframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_shareButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        DefaultTableModel table = (DefaultTableModel) taggedUsersTable.getModel();
+        User activeUser = socialNetwork.getActiveUser().get(0);
+        String username = tagged.getText(); //Se obtiene el usuario
+        username = username.toLowerCase(); //Se pasa a minuscula
+        User userTagged = isRegister(socialNetwork,username); //Se verifica que usuario se encuentre registrado
+
+        if (userTagged == null){
+            JOptionPane.showMessageDialog(this,"El usuario no se encuentra disponible","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+
+        else{
+            ArrayList<User>userListTagged = new ArrayList<>();
+            userListTagged.add(userTagged);
+
+            for(User userTagge : userListTagged){
+                Object [] row = new Object[]{userTagged.getName()};
+                table.addRow(row);
+            }
+        }
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,12 +449,50 @@ public class JFrameShare extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameShare().setVisible(true);
+                //new JFrameShare().setVisible(true);
             }
         });
     }
 
+    public User isRegister(Social socialNetwork, String user) {
+        // Se crea una variable para determinar si el usuario se encuentra ya registrado
+        boolean found = false; //false: no esta registrado | true: usuario ya registrado
+        //Se recorre la lista de usuario registrados en la red social
+        int i = 0;
+        User userAux = socialNetwork.getUserArrayList().get(i);
+        while (i < socialNetwork.getUserArrayList().size()) {
+            userAux = socialNetwork.getUserArrayList().get(i);
+            //Si se encuentra coincidencia el verificador toma el valor true
+            if (userAux.getName().equals(user)) {
+                found = true;
+                return userAux;
+            }
+            i++;
+        }
+        return null;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addButton;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JTextField idShare;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JButton logoutButton;
+    private javax.swing.JButton menuButton;
+    private javax.swing.JTable myFollowedTable;
+    private javax.swing.JButton myProfileButton;
+    private javax.swing.JTable postSocialTable;
+    private javax.swing.JButton shareButton;
+    private javax.swing.JTextField tagged;
+    private javax.swing.JTable taggedUsersTable;
     // End of variables declaration//GEN-END:variables
 
 }

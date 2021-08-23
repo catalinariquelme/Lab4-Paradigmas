@@ -5,60 +5,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94e19d61-c464-4600-b11d-c0175de0d868" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameFollow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameMyProfile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFramePost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameRegister$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameRegister$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameRegister$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameRegister$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameRegister$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameRegister$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/JFrameSocial.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameComment.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameComment.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameFollow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameFollow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameFollow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameFollow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameLogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameLogin.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameMyProfile.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameMyProfile.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameMyProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameMyProfile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFramePost.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFramePost.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFramePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFramePost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameRegister.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameRegister.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameSocial.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameSocial.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Social/JFrameSocial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/JFrameSocial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/Reaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/Reaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/Social.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/Social.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Social/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Social/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameComment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameFollow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameMyProfile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFramePost.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameShare$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameShare$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameShare.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameShare.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameSocial$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameSocial$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameSocial$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameSocial$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameSocial$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameSocial$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/View/JFrameSocial.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/View/JFrameSocial.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/Reaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/Reaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/Social.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/Social.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Social/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Social/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameComment.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameComment.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameComment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameFollow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameFollow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameFollow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameFollow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameMyProfile.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameMyProfile.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameMyProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameMyProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFramePost.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFramePost.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFramePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFramePost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameShare.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameShare.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameShare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameShare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameSocial.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameSocial.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/JFrameSocial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/JFrameSocial.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +154,9 @@
       <workItem from="1629587573787" duration="93000" />
       <workItem from="1629610282699" duration="58000" />
       <workItem from="1629610398693" duration="78000" />
+      <workItem from="1629696905800" duration="269000" />
+      <workItem from="1629702561009" duration="745000" />
+      <workItem from="1629737934356" duration="383000" />
     </task>
     <servers />
   </component>

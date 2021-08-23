@@ -43,8 +43,8 @@ public class JFrameLogin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
-        jtfUserLogin = new javax.swing.JTextField();
-        jtfPasswordLogin = new javax.swing.JPasswordField();
+        userLogin = new javax.swing.JTextField();
+        passwordLogin = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -81,24 +81,24 @@ public class JFrameLogin extends javax.swing.JFrame {
             }
         });
 
-        jtfUserLogin.setBackground(new java.awt.Color(245, 245, 245));
-        jtfUserLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jtfUserLogin.setText("Elizabeth");
-        jtfUserLogin.setToolTipText("");
-        jtfUserLogin.setBorder(null);
-        jtfUserLogin.addActionListener(new java.awt.event.ActionListener() {
+        userLogin.setBackground(new java.awt.Color(245, 245, 245));
+        userLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        userLogin.setText("Elizabeth");
+        userLogin.setToolTipText("");
+        userLogin.setBorder(null);
+        userLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfUserLoginActionPerformed(evt);
+                userLoginActionPerformed(evt);
             }
         });
 
-        jtfPasswordLogin.setBackground(new java.awt.Color(245, 245, 245));
-        jtfPasswordLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jtfPasswordLogin.setText("Contraseña");
-        jtfPasswordLogin.setBorder(null);
-        jtfPasswordLogin.addActionListener(new java.awt.event.ActionListener() {
+        passwordLogin.setBackground(new java.awt.Color(245, 245, 245));
+        passwordLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        passwordLogin.setText("Contraseña");
+        passwordLogin.setBorder(null);
+        passwordLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfPasswordLoginActionPerformed(evt);
+                passwordLoginActionPerformed(evt);
             }
         });
 
@@ -159,8 +159,8 @@ public class JFrameLogin extends javax.swing.JFrame {
                 .addContainerGap(92, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jtfUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jtfPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(userLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(passwordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createSequentialGroup()
@@ -187,11 +187,11 @@ public class JFrameLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jtfUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtfPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
@@ -232,13 +232,13 @@ public class JFrameLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtfPasswordLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfPasswordLoginActionPerformed
+    private void passwordLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtfPasswordLoginActionPerformed
+    }//GEN-LAST:event_passwordLoginActionPerformed
 
-    private void jtfUserLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfUserLoginActionPerformed
+    private void userLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtfUserLoginActionPerformed
+    }//GEN-LAST:event_userLoginActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 
@@ -246,9 +246,9 @@ public class JFrameLogin extends javax.swing.JFrame {
         LocalDate today = LocalDate.now();
         String date = today.format(DateTimeFormatter.ofPattern("dd/MMM/yy"));
         //Se crea un nuevo usuario para poder iniciar la funciï¿½n
-        User user = new User(" ", " ", date,0, new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
-        String username = jtfUserLogin.getText();
-        String password = jtfPasswordLogin.getText();
+        User user = new User(" ", " ", date,0, new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
+        String username = userLogin.getText();
+        String password = passwordLogin.getText();
         //En el caso que exista algï¿½n error al ingresar, se muestra un error
         if (user.login(socialNetwork,username,password) == 0){
             JOptionPane.showMessageDialog(this,"Nombre de usuario o contraseÃ±a incorrectos.","ERROR",JOptionPane.ERROR_MESSAGE);
@@ -327,9 +327,9 @@ public class JFrameLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jtfPasswordLogin;
-    private javax.swing.JTextField jtfUserLogin;
     private javax.swing.JButton loginButton;
+    private javax.swing.JPasswordField passwordLogin;
     private javax.swing.JButton registerButton;
+    private javax.swing.JTextField userLogin;
     // End of variables declaration//GEN-END:variables
 }

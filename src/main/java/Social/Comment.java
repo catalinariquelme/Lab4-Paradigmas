@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Comment extends Reaction{
     private final ArrayList<Comment> commentListComment; //Se almacenan los comentarios realizados al comentario
 
-
     public Comment(int idReaction, String authorReaction, String dateReaction, String contentReaction, String typeReaction, ArrayList<Comment> commentListComment) {
         super(idReaction, authorReaction, dateReaction, contentReaction, typeReaction);
         this.commentListComment = commentListComment;

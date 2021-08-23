@@ -11,6 +11,16 @@ public class Post {
     private final String typePost; //Para este laboratorio se utilizar? ?nicamente "texto"
     private final ArrayList<Comment> commentListPost; //Se almacenan los comentarios realizados a la publicaci?n
 
+    /**
+     * Constructor Clase Post
+     *
+     * @param idPost id publicacion
+     * @param contentPost contenido publicacion
+     * @param authorPost autor publicacion
+     * @param datePost fecha publicacion
+     * @param typePost tipo publicacion
+     * @param commentListPost comentarios realizados al post
+     */
     public Post(int idPost, String contentPost, String authorPost, String datePost, String typePost, ArrayList<Comment> commentListPost) {
         this.idPost = idPost;
         this.contentPost = contentPost;

@@ -51,13 +51,12 @@ public class JFramePost extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         tagged = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
         typePostCombo = new javax.swing.JComboBox<>();
+        contentText = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         taggedUsersTable = new javax.swing.JTable();
         addButton = new javax.swing.JButton();
-        contentText = new javax.swing.JTextField();
+        optionCombo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -177,36 +176,18 @@ public class JFramePost extends javax.swing.JFrame {
         jLabel5.setText("¿A quien?");
 
         tagged.setBackground(new java.awt.Color(245, 245, 245));
+        tagged.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tagged.setBorder(null);
-
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setForeground(new java.awt.Color(162, 162, 162));
-        jRadioButton1.setText("Si");
-        jRadioButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton1MouseClicked(evt);
-            }
-        });
-
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setForeground(new java.awt.Color(162, 162, 162));
-        jRadioButton2.setText("No");
-        jRadioButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jRadioButton2MouseClicked(evt);
-            }
-        });
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
 
         typePostCombo.setBackground(new java.awt.Color(162, 162, 162));
         typePostCombo.setForeground(new java.awt.Color(255, 255, 255));
         typePostCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Texto" }));
         typePostCombo.setBorder(null);
         typePostCombo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        contentText.setBackground(new java.awt.Color(245, 245, 245));
+        contentText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        contentText.setBorder(null);
 
         taggedUsersTable.setBackground(new java.awt.Color(245, 245, 245));
         taggedUsersTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -234,8 +215,10 @@ public class JFramePost extends javax.swing.JFrame {
             }
         });
 
-        contentText.setBackground(new java.awt.Color(245, 245, 245));
-        contentText.setBorder(null);
+        optionCombo.setBackground(new java.awt.Color(162, 162, 162));
+        optionCombo.setForeground(new java.awt.Color(255, 255, 255));
+        optionCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+        optionCombo.setBorder(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -248,28 +231,28 @@ public class JFramePost extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(44, 44, 44)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(typePostCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(contentText, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(tagged, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(optionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(contentText, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGap(250, 250, 250)))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(menuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -294,12 +277,10 @@ public class JFramePost extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contentText, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(optionCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -310,7 +291,7 @@ public class JFramePost extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(postButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(menuButton)
                 .addGap(22, 22, 22))
         );
@@ -319,7 +300,7 @@ public class JFramePost extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,16 +329,6 @@ public class JFramePost extends javax.swing.JFrame {
 
     }//GEN-LAST:event_postButtonActionPerformed
 
-    private void jRadioButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseClicked
-        tagged.setEditable(false);
-        addButton.setEnabled(false);
-    }//GEN-LAST:event_jRadioButton2MouseClicked
-
-    private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
-        tagged.setEditable(true);
-        addButton.setEnabled(true);
-    }//GEN-LAST:event_jRadioButton1MouseClicked
-
     private void myProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButtonMouseClicked
         JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
         myProfileJFrame.setVisible(true);
@@ -366,10 +337,9 @@ public class JFramePost extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         DefaultTableModel table = (DefaultTableModel) taggedUsersTable.getModel();
-        String username = tagged.getText();
-        username = username.toLowerCase();
-        
-        User userTagged = isRegister(socialNetwork,username);
+        String username = tagged.getText(); //Se obtiene el usuario
+        username = username.toLowerCase(); //Se pasa a minuscula 
+        User userTagged = isRegister(socialNetwork,username); //Se verifica que usuario se encuentre registrado
         
         if (userTagged == null){
             JOptionPane.showMessageDialog(this,"El usuario no se encuentra disponible","ERROR",JOptionPane.ERROR_MESSAGE);
@@ -386,10 +356,6 @@ public class JFramePost extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addButtonActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         activeUser.logout(socialNetwork);
@@ -401,8 +367,32 @@ public class JFramePost extends javax.swing.JFrame {
     private void postButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_postButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         String contentPost = contentText.getText();
-        String typePost = (String) typePostCombo.getSelectedItem();
-        activeUser.post(socialNetwork,typePost,contentPost,2);
+        String typePost = (String) typePostCombo.getSelectedItem();//Se obtiene tipo de post
+        String optionPost = (String) optionCombo.getSelectedItem();//Se obtienen si se desea etiquetar o no
+        //Se pasa a entero la opción
+        int optionInt = 0;
+        if (optionPost == "Si"){
+            optionInt = 1;
+        }
+        else if(optionPost == "No"){
+            optionInt = 2;
+        }
+        //Se recolecta la información de la tabla
+        ArrayList<String>tagged = new ArrayList();
+        for(int i = 0; i< taggedUsersTable.getRowCount();i++){
+            tagged.add(taggedUsersTable.getValueAt(i,0).toString());
+        }
+        
+        //Se genera la publicacion
+        if (activeUser.post(socialNetwork,typePost,contentPost,optionInt,tagged) == 0){
+            JOptionPane.showMessageDialog(this,"No se puedo realizar la publicacion","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Publicacion registrada con exito");
+            JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
+            socialJframe.setVisible(true);
+            this.dispose();
+        }
         
         JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
         socialJframe.setVisible(true);
@@ -471,12 +461,11 @@ public class JFramePost extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton menuButton;
     private javax.swing.JButton myProfileButton;
+    private javax.swing.JComboBox<String> optionCombo;
     private javax.swing.JButton postButton;
     private javax.swing.JTextField tagged;
     private javax.swing.JTable taggedUsersTable;

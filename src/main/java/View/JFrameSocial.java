@@ -155,6 +155,11 @@ public class JFrameSocial extends javax.swing.JFrame {
         shareButton.setForeground(new java.awt.Color(255, 255, 255));
         shareButton.setText("Compartir publicación");
         shareButton.setBorder(null);
+        shareButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shareButtonActionPerformed(evt);
+            }
+        });
 
         followButton.setBackground(new java.awt.Color(56, 168, 153));
         followButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -274,6 +279,12 @@ public class JFrameSocial extends javax.swing.JFrame {
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LogoutButtonActionPerformed
+
+    private void shareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shareButtonActionPerformed
+        JFrameShare shareJFrame = new JFrameShare(socialNetwork);
+        shareJFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_shareButtonActionPerformed
 
     /**
      * @param args the command line arguments

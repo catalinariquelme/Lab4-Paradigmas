@@ -21,6 +21,14 @@ public class Social {
         activeUser = new ArrayList<>();
     }
 
+    /**
+     * Constructor red scoial
+     *
+     * @param userArrayList lista usuarios
+     * @param postArrayList lista publicaciones
+     * @param commentArrayList lista comentarios
+     * @param activeUser lista usuario activo
+     */
     public Social(ArrayList<User> userArrayList, ArrayList<Post> postArrayList, ArrayList<Comment> commentArrayList, ArrayList<User> activeUser) {
         this.userArrayList = userArrayList;
         this.postArrayList = postArrayList;
@@ -62,7 +70,11 @@ public class Social {
 
     /**
      * Permite almacenar el nuevo usuario en la red social
-     * @param socialNetwork red social
+     *
+     * @param socialNetwork
+     * @param nameRegister
+     * @param passwordRegister
+     * @return 1 (Se registro) | 0 (No se registro)
      */
     public int register(Social socialNetwork,String nameRegister,String passwordRegister){
         //Se obtienen los usuarios registrados en la plataforma
@@ -77,7 +89,7 @@ public class Social {
         //Se determina id del usuario
         int newIdUser = socialNetwork.getUserArrayList().size() + 1;
         //Se crea un usuario nuevo
-        User newUser = new User(nameRegister,passwordRegister,date,newIdUser, new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
+        User newUser = new User(nameRegister,passwordRegister,date,newIdUser, new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
         // Se crea una variable para determinar si el usuario se encuentra ya registrado
         boolean found = false; //false: no esta registrado | true: usuario ya registrado
         //Se recorre la lista de usuario registrados en la red social
@@ -125,14 +137,14 @@ public class Social {
 
         //Se crean 10 publicaciones diferentes
         Post post1 = new Post(1,"Hola mundo","lizzy","20/nov/2020","Texto",comment1);
-        Post post2 = new Post(2,"¿Cual sera la temperatura de hoy?","isidora","18/nov/2021","Texto",comment2);
+        Post post2 = new Post(2,"ï¿½Cual sera la temperatura de hoy?","isidora","18/nov/2021","Texto",comment2);
         Post post3 = new Post(3,"Hoy tenemos prueba","cas","27/dic/2021","Texto",comment3);
         Post post4 = new Post(4,"Yo creo que la tierra es plana","maria","14/dic/2021","Texto",comment4);
-        Post post5 = new Post(5,"¿Cuando empiezan las vacaciones?","isidora","12/nov/2020","Texto",comment5);
+        Post post5 = new Post(5,"ï¿½Cuando empiezan las vacaciones?","isidora","12/nov/2020","Texto",comment5);
         Post post6 = new Post(6,"Ya dije Hola Mundo?","lizzy","27/dic/2021","Texto",comment6);
         Post post7 = new Post(7,"Me ecantan los caballos","maria","23/dic/2021","Texto",comment7);
         Post post8 = new Post(8,"Hoy comenzare a comer mejor","cas","21/nov/2020","Texto",comment8);
-        Post post9 = new Post(9,"¿Cuando acaba el semestre?","elizabeth","3/dic/2020","Texto",comment9);
+        Post post9 = new Post(9,"ï¿½Cuando acaba el semestre?","elizabeth","3/dic/2020","Texto",comment9);
         Post post10 = new Post(10,"Adios mundo","isidora","13/dic/2021","Texto",comment10);
 
         //Se crean 5 listas de post, en donde se almacenaran las publicaciones de cada usuario
@@ -141,6 +153,13 @@ public class Social {
         ArrayList<Post> postListUser3= new ArrayList<>();
         ArrayList<Post> postListUser4= new ArrayList<>();
         ArrayList<Post> postListUser5= new ArrayList<>();
+
+        //Se crean 5 listas de post, en donde se almacenaran los comentarios de cada usuario
+        ArrayList<Comment> commentListUser1= new ArrayList<>();
+        ArrayList<Comment> commentListUser2= new ArrayList<>();
+        ArrayList<Comment> commentListUser3= new ArrayList<>();
+        ArrayList<Comment> commentListUser4= new ArrayList<>();
+        ArrayList<Comment> commentListUser5= new ArrayList<>();
 
         //Se agregan las publicaciones a la lista de publicaciones de cada usuario
         Collections.addAll(postListUser1,post3,post8);
@@ -164,11 +183,18 @@ public class Social {
         ArrayList<String> followedArrayList5= new ArrayList<>();
 
         //Se agregan los seguidores a la lista de seguidores de cada usuario
-        followArrayList1.add("lizzy");
+        Collections.addAll(followArrayList1,"lizzy","maria");
         Collections.addAll(followArrayList2,"cas","maria","isidora");
-        followArrayList3.add("elizabeth");
-        Collections.addAll(followArrayList4,"isidora");
-        followArrayList5.add("cas");
+        Collections.addAll(followArrayList3,"elizabeth","maria");
+        Collections.addAll(followArrayList4,"isidora","elizabeth","lizzy");
+        Collections.addAll(followArrayList5,"cas","maria","isidora");
+        
+        //Se agregan los seguidos a la lista de seguidores de cada usuario
+        Collections.addAll(followedArrayList1,"lizzy","elizabeth");
+        Collections.addAll(followedArrayList2,"cas","maria");
+        Collections.addAll(followedArrayList3,"lizzy","maria","elizabeth");
+        Collections.addAll(followedArrayList4,"cas","lizzy","elizabeth");
+        Collections.addAll(followedArrayList5,"isidora","maria","lizzy","cas");
 
         //Se crean 5 listas de post, en donde se almacenaran el feed de cada uno de los usuarios
         ArrayList<Post> feed1= new ArrayList<>();
@@ -177,15 +203,18 @@ public class Social {
         ArrayList<Post> feed4= new ArrayList<>();
         ArrayList<Post> feed5= new ArrayList<>();
 
+        //Se crean 5 listas de post, en donde se almacenaran las publicaciones compartidas por el usuario
+        ArrayList<Post> sharePostList= new ArrayList<>();
+
         //Se obtiene la fecha del sistema y se convierte a string
         LocalDate today = LocalDate.now();
         String date = today.format(DateTimeFormatter.ofPattern("dd/MMM/yy"));
         //Se crean 5 usuarios diferentes
-        User user1 = new User("cas","123",date,1,postListUser1,followArrayList1,followedArrayList1,feed1);
-        User user2 = new User("lizzy","pass",date,2,postListUser2,followArrayList2,followedArrayList2,feed2);
-        User user3 = new User("isidora","pass123",date,3,postListUser3,followArrayList3,followedArrayList3,feed3);
-        User user4 = new User("maria","123",date,4,postListUser4,followArrayList4,followedArrayList4,feed4);
-        User user5 = new User("elizabeth","pass",date,5,postListUser5,followArrayList5,followedArrayList5,feed5);
+        User user1 = new User("cas","123",date,1,postListUser1,commentListUser1,followArrayList1,followedArrayList1,feed1,sharePostList);
+        User user2 = new User("lizzy","pass",date,2,postListUser2,commentListUser2,followArrayList2,followedArrayList2,feed2,sharePostList);
+        User user3 = new User("isidora","pass123",date,3,postListUser3,commentListUser3,followArrayList3,followedArrayList3,feed3,sharePostList);
+        User user4 = new User("maria","123",date,4,postListUser4,commentListUser4,followArrayList4,followedArrayList4,feed4,sharePostList);
+        User user5 = new User("elizabeth","pass",date,5,postListUser5,commentListUser5,followArrayList5,followedArrayList5,feed5,sharePostList);
 
         //Se agregan los atributos a la red social
         Collections.addAll(userList,user1,user2,user3,user4,user5);
