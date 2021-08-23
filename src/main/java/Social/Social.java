@@ -124,16 +124,16 @@ public class Social {
         ArrayList<Comment> comment10= new ArrayList<>();
 
         //Se crean 10 publicaciones diferentes
-        Post post1 = new Post(1,"Hola mundo","lizzy","20/nov/2020","text",comment1);
-        Post post2 = new Post(2,"ï¿½Cual sera la temperatura de hoy?","isidora","18/nov/2021","text",comment2);
-        Post post3 = new Post(3,"Hoy tenemos prueba","cas","27/dic/2021","text",comment3);
-        Post post4 = new Post(4,"Yo creo que la tierra es plana","maria","14/dic/2021","text",comment4);
-        Post post5 = new Post(5,"ï¿½Cuando empiezan las vacaciones?","isidora","12/nov/2020","text",comment5);
-        Post post6 = new Post(6,"Ya dije Hola Mundo?","lizzy","27/dic/2021","text",comment6);
-        Post post7 = new Post(7,"Me ecantan los caballos","maria","23/dic/2021","text",comment7);
-        Post post8 = new Post(8,"Hoy comenzare a comer mejor","cas","21/nov/2020","text",comment8);
-        Post post9 = new Post(9,"ï¿½Cuando acaba el semestre?","elizabeth","3/dic/2021","text",comment9);
-        Post post10 = new Post(10,"Adios mundo","isidora","13/dic/2021","text",comment10);
+        Post post1 = new Post(1,"Hola mundo","lizzy","20/nov/2020","Texto",comment1);
+        Post post2 = new Post(2,"¿Cual sera la temperatura de hoy?","isidora","18/nov/2021","Texto",comment2);
+        Post post3 = new Post(3,"Hoy tenemos prueba","cas","27/dic/2021","Texto",comment3);
+        Post post4 = new Post(4,"Yo creo que la tierra es plana","maria","14/dic/2021","Texto",comment4);
+        Post post5 = new Post(5,"¿Cuando empiezan las vacaciones?","isidora","12/nov/2020","Texto",comment5);
+        Post post6 = new Post(6,"Ya dije Hola Mundo?","lizzy","27/dic/2021","Texto",comment6);
+        Post post7 = new Post(7,"Me ecantan los caballos","maria","23/dic/2021","Texto",comment7);
+        Post post8 = new Post(8,"Hoy comenzare a comer mejor","cas","21/nov/2020","Texto",comment8);
+        Post post9 = new Post(9,"¿Cuando acaba el semestre?","elizabeth","3/dic/2020","Texto",comment9);
+        Post post10 = new Post(10,"Adios mundo","isidora","13/dic/2021","Texto",comment10);
 
         //Se crean 5 listas de post, en donde se almacenaran las publicaciones de cada usuario
         ArrayList<Post> postListUser1= new ArrayList<>();

@@ -149,11 +149,13 @@ public class User {
      *
      * @param socialNetwork red social
      */
-    public void post(Social socialNetwork, String postType, String text,int option) {
+    public int post(Social socialNetwork, String postType, String text,int option) {
         //Se obtienen la lista de usuarios registrados en la plataforma
         ArrayList<User> userList = socialNetwork.getUserArrayList();
         //Se obtienen las publicaciones realizadas en la red social
         ArrayList<Post> postList = socialNetwork.getPostArrayList();
+        //Se obtienen las publicaciones realizadas por el usuario
+        ArrayList<Post> postActiveUser = socialNetwork.getActiveUser().get(0).getPostListUser();
         //Se obtienen el usuario activo en la red social
         ArrayList<User> activeUser = socialNetwork.getActiveUser();
 
@@ -168,39 +170,6 @@ public class User {
 
         //Se crea una lista la cual guardar? los usuarios a los que se les dirigir? el post
         ArrayList<String> targetedUsers = new ArrayList<>();
-        //El post ser? dirigido
-        if (option == 1) {
-
-            boolean in = false;
-            //Se realiza un ciclo con finalidad de ingresar una serie de usuarios
-            while (!in) {
-                System.out.println("\nIngrese el usuario a dirigir: ");
-                String user = scan2.nextLine();
-                //Se consulta si el usuario se encuentra registrado en la red social
-                User userAux = isRegister(socialNetwork, user);
-                if (userAux == null) {
-                    System.out.println("ERROR: El usuario no se encuentra registrado, intente nuevamente\n");
-                } else {
-                    targetedUsers.add(user);
-                }
-                System.out.println("?Desea dirigir el post a otro usuario?");
-                System.out.println("1)Si    2)No");
-                int option2 = scan.nextInt();
-                //El usuario elige dejar de ingresar usuarios
-                if (option2 == 2) {
-                    in = true;
-                    break;
-                }
-            }
-        }
-        //El post NO ser? dirigido
-        else if (option == 2) {
-            System.out.println("No se dirigira a nadie");
-        }
-        //El usuario ingreso un n?mero err?neo
-        else {
-            System.out.println("Ingrese un opcion valida, intente nuevamente");
-        }
 
         //Se define un id para el post a crear
         int newIdPost = socialNetwork.getPostArrayList().size() + 1;
@@ -214,6 +183,8 @@ public class User {
         //Se crea una nueva publicaci?n con la informaci?n reunida
         Post newPost = new Post(newIdPost, text, userName, date, postType, comment);
         postList.add(newPost);
+        postActiveUser.add(newPost);
+        
 
         if (option == 1) {
             int i = 0;
@@ -226,6 +197,7 @@ public class User {
         }
 
         System.out.println("Se agrego un nuevo post a la plataforma\n");
+        return 1;
     }
 
     /**

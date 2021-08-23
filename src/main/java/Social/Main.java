@@ -5,6 +5,7 @@
  */
 package Social;
 
+import View.JFrameLogin;
 import static Social.Social.socialNetworkExample;
 
 
