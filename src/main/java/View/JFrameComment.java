@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 public class JFrameComment extends javax.swing.JFrame {
 
     private Social socialNetwork;
-    
+        //Carga los datos de cada tabla
         public void loadTable(){
         //Tabla relacionada con los post en la red social
         DefaultTableModel postTable = (DefaultTableModel) postSocialTable.getModel();
@@ -37,7 +37,7 @@ public class JFrameComment extends javax.swing.JFrame {
 
         for(Comment date : commentList){
             Object [] row = new Object[]{date.getIdReaction(),date.getContentReaction(),date.getAuthorReaction(),date.getDateReaction(),date.getTypeReaction()};
-            postTable.addRow(row);
+            commentTable.addRow(row);
         }
     }
     
@@ -335,11 +335,11 @@ public class JFrameComment extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Evento boton salir
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
         this.dispose();
     }//GEN-LAST:event_exitButtonMouseClicked
-
+    //Evento boton menu
     private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
         JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
         socialJframe.setVisible(true);
@@ -349,7 +349,7 @@ public class JFrameComment extends javax.swing.JFrame {
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
 
     }//GEN-LAST:event_menuButtonActionPerformed
-
+    //Evento boton comentar
     private void commentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commentButtonActionPerformed
        User activeUser = socialNetwork.getActiveUser().get(0); //Se obtiene el usuario activo
        String typeComment = (String) typeCommentCombo.getSelectedItem(); //Se obtiene el tipo de publicación
@@ -376,13 +376,13 @@ public class JFrameComment extends javax.swing.JFrame {
        
        
     }//GEN-LAST:event_commentButtonActionPerformed
-
+    //Evento boton mi perfil
     private void myProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButtonMouseClicked
         JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
         myProfileJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_myProfileButtonMouseClicked
-
+    //Evento cerrar sesion
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         activeUser.logout(socialNetwork);

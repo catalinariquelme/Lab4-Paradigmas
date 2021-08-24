@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 public class JFrameMyProfile extends javax.swing.JFrame {
 
     private Social socialNetwork;
-    
+    //Evento cargar tabla con sus respectivos valores
     public void loadTable(){
         //Tabla relacionada con los post
         DefaultTableModel postTable = (DefaultTableModel) myPostTable.getModel();
@@ -31,9 +31,9 @@ public class JFrameMyProfile extends javax.swing.JFrame {
         }
         
         //Tabla relacionada con los comentarios
-        DefaultTableModel commentTable = (DefaultTableModel) myPostTable.getModel();
+        DefaultTableModel commentTable = (DefaultTableModel) myCommentTable.getModel();
         ArrayList<Comment> commentList = socialNetwork.getActiveUser().get(0).getCommentListUser(); //Se obtienen los post realizados por el usuario
-
+        
         for(Comment date : commentList){
             Object [] row = new Object[]{date.getIdReaction(),date.getContentReaction(),date.getDateReaction(),date.getTypeReaction()};
             commentTable.addRow(row);
@@ -384,17 +384,17 @@ public class JFrameMyProfile extends javax.swing.JFrame {
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
 
     }//GEN-LAST:event_menuButtonActionPerformed
-
+    //Evento boton menu
     private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
         JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
         socialJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menuButtonMouseClicked
-
+    //Evento boton salir
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
         this.dispose();
     }//GEN-LAST:event_exitButtonMouseClicked
-
+    //Evento boton cerrar sesion
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         activeUser.logout(socialNetwork);

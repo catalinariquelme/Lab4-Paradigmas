@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableModel;
 public class JFrameFollow extends javax.swing.JFrame {
     private Social socialNetwork;
     
+    //Carga los datos a las tablas respectivas
     public void loadTable(){
         //Usuarios registrados
         DefaultTableModel table = (DefaultTableModel) usersTable.getModel();
@@ -273,13 +274,22 @@ public class JFrameFollow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Evento boton Seguir
     private void followButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_followButtonActionPerformed
-        User activeUser = socialNetwork.getActiveUser().get(0);
-        String username = jtfollow.getText();
-        username = username.toLowerCase();
+        User activeUser = socialNetwork.getActiveUser().get(0);//Se obtiene el usuario activo
+        String username = jtfollow.getText();//Se obtiene el usuario
+        username = username.toLowerCase();//Se convierte a minuscula
+        User userFollow = activeUser.isRegister(socialNetwork,username); //Se verifica que usuario se encuentre registrado
+        //Se muestra un mensaje en caso que no se encuentre registrado
+        if (userFollow == null){
+            JOptionPane.showMessageDialog(this,"El usuario no se encuentra disponible","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+        //En el caso que ya siga este usuario
+        else if (activeUser.isFollowed(socialNetwork,username)== 1){
+            JOptionPane.showMessageDialog(this,"Ya sigues a este usuario","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
         //En el caso que exista algún error al seguir, se muestra un error
-        if (activeUser.follow(socialNetwork,username) == 0){
+        else if (activeUser.follow(socialNetwork,username) == 0){
             JOptionPane.showMessageDialog(this,"No se puede seguir al usuario.","ERROR",JOptionPane.ERROR_MESSAGE);
         }
         else{
@@ -293,23 +303,23 @@ public class JFrameFollow extends javax.swing.JFrame {
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
 
     }//GEN-LAST:event_menuButtonActionPerformed
-
+    //Evento boton menu
     private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
         JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
         socialJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_menuButtonMouseClicked
-
+    //Evento boton salir
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
         this.dispose();
     }//GEN-LAST:event_exitButtonMouseClicked
-
+    //Evento boton mi perfil
     private void myProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButtonMouseClicked
         JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
         myProfileJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_myProfileButtonMouseClicked
-
+    //Evento boton cerrar sesión
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         activeUser.logout(socialNetwork);

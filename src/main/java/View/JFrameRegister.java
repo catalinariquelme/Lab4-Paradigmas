@@ -201,7 +201,7 @@ public class JFrameRegister extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Evento boton registrar
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
 
         String username = userRegister.getText();
@@ -229,7 +229,7 @@ public class JFrameRegister extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 
     }//GEN-LAST:event_loginButtonActionPerformed
-
+    //Evento boton ingresar
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         JFrameLogin loginJframe = new JFrameLogin(socialNetwork);
         loginJframe.setVisible(true);

@@ -226,7 +226,7 @@ public class JFrameSocial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Evento boton salir
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
         this.dispose();
         
@@ -239,19 +239,19 @@ public class JFrameSocial extends javax.swing.JFrame {
     private void commentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commentButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_commentButtonActionPerformed
-
+    //Evento boton Post
     private void postButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_postButtonMouseClicked
         JFramePost postJframe = new JFramePost(socialNetwork);
         postJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_postButtonMouseClicked
-
+    //Evento boton Comment
     private void commentButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_commentButtonMouseClicked
         JFrameComment commentJframe = new JFrameComment(socialNetwork);
         commentJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_commentButtonMouseClicked
-    
+    //Evento boton cerrar sesion
     private void LogoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoutButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         activeUser.logout(socialNetwork);
@@ -259,27 +259,27 @@ public class JFrameSocial extends javax.swing.JFrame {
         loginJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LogoutButtonMouseClicked
-
+    
     private void followButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_followButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_followButtonActionPerformed
-
+    //Evento boton seguir
     private void followButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_followButtonMouseClicked
         JFrameFollow followJFrame = new JFrameFollow(socialNetwork);
         followJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_followButtonMouseClicked
-
+    //Evento boton mi perfil
     private void myProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButtonMouseClicked
         JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
         myProfileJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_myProfileButtonMouseClicked
-
+    //Evento boton cerrar sesion 
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LogoutButtonActionPerformed
-
+    //Evento boton compartir 
     private void shareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shareButtonActionPerformed
         JFrameShare shareJFrame = new JFrameShare(socialNetwork);
         shareJFrame.setVisible(true);

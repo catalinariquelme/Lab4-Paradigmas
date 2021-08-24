@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class JFrameShare extends javax.swing.JFrame {
 
     private Social socialNetwork;
-
+        //Cargar tablas con sus respectvos datos
         public void loadTable(){
         //Tabla relacionada con los post en la red social
         DefaultTableModel postTable = (DefaultTableModel) postSocialTable.getModel();
@@ -343,7 +343,7 @@ public class JFrameShare extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Evento boton cerrar sesion
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         activeUser.logout(socialNetwork);
@@ -351,17 +351,17 @@ public class JFrameShare extends javax.swing.JFrame {
         loginJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_logoutButtonMouseClicked
-
+    //Evento boton salir
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
         this.dispose();
     }//GEN-LAST:event_exitButtonMouseClicked
-
+    //Evento boton mi perfil
     private void myProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButtonMouseClicked
         JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
         myProfileJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_myProfileButtonMouseClicked
-
+    //Evento boton menu
     private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
         JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
         socialJframe.setVisible(true);
@@ -371,7 +371,7 @@ public class JFrameShare extends javax.swing.JFrame {
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
 
     }//GEN-LAST:event_menuButtonActionPerformed
-
+    //Evento boton compartir
     private void shareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shareButtonActionPerformed
         User activeUser = socialNetwork.getActiveUser().get(0);
         ArrayList<String>tagged = new ArrayList();
@@ -396,18 +396,20 @@ public class JFrameShare extends javax.swing.JFrame {
         socialJframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_shareButtonActionPerformed
-
+    //Evento boton agregar
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         DefaultTableModel table = (DefaultTableModel) taggedUsersTable.getModel();
-        User activeUser = socialNetwork.getActiveUser().get(0);
+        User activeUser = socialNetwork.getActiveUser().get(0);//Se obtiene el usuario activo
         String username = tagged.getText(); //Se obtiene el usuario
         username = username.toLowerCase(); //Se pasa a minuscula
-        User userTagged = isRegister(socialNetwork,username); //Se verifica que usuario se encuentre registrado
-
-        if (userTagged == null){
+        User userTagged = activeUser.isRegister(socialNetwork,username); //Se verifica que usuario se encuentre registrado
+        //Se muestra un aviso en caso que no se encuentre registrado
+        if (activeUser.isRegister(socialNetwork,username) == null){
             JOptionPane.showMessageDialog(this,"El usuario no se encuentra disponible","ERROR",JOptionPane.ERROR_MESSAGE);
         }
-
+        if (activeUser.isFollowed(socialNetwork,username)== 0){
+            JOptionPane.showMessageDialog(this,"No sigue al usuario, solo puede compartir publicaciones con usuarios seguidos","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
         else{
             ArrayList<User>userListTagged = new ArrayList<>();
             userListTagged.add(userTagged);
@@ -454,23 +456,6 @@ public class JFrameShare extends javax.swing.JFrame {
         });
     }
 
-    public User isRegister(Social socialNetwork, String user) {
-        // Se crea una variable para determinar si el usuario se encuentra ya registrado
-        boolean found = false; //false: no esta registrado | true: usuario ya registrado
-        //Se recorre la lista de usuario registrados en la red social
-        int i = 0;
-        User userAux = socialNetwork.getUserArrayList().get(i);
-        while (i < socialNetwork.getUserArrayList().size()) {
-            userAux = socialNetwork.getUserArrayList().get(i);
-            //Si se encuentra coincidencia el verificador toma el valor true
-            if (userAux.getName().equals(user)) {
-                found = true;
-                return userAux;
-            }
-            i++;
-        }
-        return null;
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton exitButton;

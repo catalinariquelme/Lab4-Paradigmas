@@ -239,7 +239,7 @@ public class JFrameLogin extends javax.swing.JFrame {
     private void userLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userLoginActionPerformed
-
+    //Evento boton ingresar sesion
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 
         //Se obtiene la fecha del sistema y se convierte a string
@@ -264,7 +264,7 @@ public class JFrameLogin extends javax.swing.JFrame {
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerButtonActionPerformed
-
+    //Evento boton registrar
     private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
         JFrameRegister registerJframe = new JFrameRegister(socialNetwork);
         registerJframe.setVisible(true);
@@ -274,7 +274,7 @@ public class JFrameLogin extends javax.swing.JFrame {
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_exitButtonActionPerformed
-
+    //Evento boton salir
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
         this.dispose();
     }//GEN-LAST:event_exitButtonMouseClicked

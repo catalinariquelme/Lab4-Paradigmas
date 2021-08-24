@@ -309,12 +309,12 @@ public class JFramePost extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Evento boton salir
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
         this.dispose();
 
     }//GEN-LAST:event_exitButtonMouseClicked
-
+    //Evento boton menu
     private void menuButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuButtonMouseClicked
     JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
     socialJframe.setVisible(true);
@@ -328,18 +328,19 @@ public class JFramePost extends javax.swing.JFrame {
     private void postButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postButtonActionPerformed
 
     }//GEN-LAST:event_postButtonActionPerformed
-
+    //Evento boton mi perfil
     private void myProfileButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myProfileButtonMouseClicked
         JFrameMyProfile myProfileJFrame = new JFrameMyProfile(socialNetwork);
         myProfileJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_myProfileButtonMouseClicked
-
+    //Evento boton agregar
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         DefaultTableModel table = (DefaultTableModel) taggedUsersTable.getModel();
+        User activeUser = socialNetwork.getActiveUser().get(0); //Se obtiene el usuario activo
         String username = tagged.getText(); //Se obtiene el usuario
         username = username.toLowerCase(); //Se pasa a minuscula 
-        User userTagged = isRegister(socialNetwork,username); //Se verifica que usuario se encuentre registrado
+        User userTagged = activeUser.isRegister(socialNetwork,username); //Se verifica que usuario se encuentre registrado
         
         if (userTagged == null){
             JOptionPane.showMessageDialog(this,"El usuario no se encuentra disponible","ERROR",JOptionPane.ERROR_MESSAGE);
@@ -355,7 +356,7 @@ public class JFramePost extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_addButtonActionPerformed
-
+    //Evento boton cerrar sesion
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         User activeUser = socialNetwork.getActiveUser().get(0);
         activeUser.logout(socialNetwork);
@@ -363,10 +364,10 @@ public class JFramePost extends javax.swing.JFrame {
         loginJFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_logoutButtonMouseClicked
-
+    //Evento boton publicar
     private void postButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_postButtonMouseClicked
-        User activeUser = socialNetwork.getActiveUser().get(0);
-        String contentPost = contentText.getText();
+        User activeUser = socialNetwork.getActiveUser().get(0);//Se obtiene el usuario activo
+        String contentPost = contentText.getText();//Se obtiene el contenido del post
         String typePost = (String) typePostCombo.getSelectedItem();//Se obtiene tipo de post
         String optionPost = (String) optionCombo.getSelectedItem();//Se obtienen si se desea etiquetar o no
         //Se pasa a entero la opción
@@ -393,10 +394,6 @@ public class JFramePost extends javax.swing.JFrame {
             socialJframe.setVisible(true);
             this.dispose();
         }
-        
-        JFrameSocial socialJframe = new JFrameSocial(socialNetwork);
-        socialJframe.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_postButtonMouseClicked
 
     /**
@@ -432,23 +429,6 @@ public class JFramePost extends javax.swing.JFrame {
                 //new JFramePost().setVisible(true);
             }
         });
-    }
-    public User isRegister(Social socialNetwork, String user) {
-        // Se crea una variable para determinar si el usuario se encuentra ya registrado
-        boolean found = false; //false: no esta registrado | true: usuario ya registrado
-        //Se recorre la lista de usuario registrados en la red social
-        int i = 0;
-        User userAux = socialNetwork.getUserArrayList().get(i);
-        while (i < socialNetwork.getUserArrayList().size()) {
-            userAux = socialNetwork.getUserArrayList().get(i);
-            //Si se encuentra coincidencia el verificador toma el valor true
-            if (userAux.getName().equals(user)) {
-                found = true;
-                return userAux;
-            }
-            i++;
-        }
-        return null;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;

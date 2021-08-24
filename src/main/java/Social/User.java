@@ -128,8 +128,6 @@ public class User {
                 //Se agrega al usuario activo y se elimina de la lista de usuarios registrados en la plataforma
                 activeUser.add(userList.get(i));
                 userList.remove(i);
-                System.out.println("Se inicio sesion con exito\n");
-                System.out.println(socialNetwork.toString(1));
                 return 1;
             }
         }
@@ -151,7 +149,6 @@ public class User {
         //Se regresa el usuario activo a la lista de usuarios registrados y se elimina de usuario activo
         userList.add(activeUser.get(0));
         activeUser.remove(0);
-        System.out.println("Se cerro sesion de manera exitosa\n");
     }
 
     /**
@@ -197,7 +194,6 @@ public class User {
             }
         }
 
-        System.out.println("Se agrego un nuevo post a la plataforma\n");
         return 1;
     }
 
@@ -227,7 +223,6 @@ public class User {
         else {
             userAux.getFollowersArrayList().add(activeUser.get(0).getName());
             activeUser.get(0).getFollowedArrayList().add(userAux.getName());
-            System.out.println("Se comenzo a seguir a " + follow + " con exito\n");
             return 1;
         }
     }
@@ -236,6 +231,8 @@ public class User {
      * Permite a un usuario (con sesi?n iniciada) compartir contenido de un usuario en su propio espacio o dirigido a otros usuarios.
      *
      * @param socialNetwork red social
+     * @param id identificador publicacion
+     * @param userShareList lista con usuarios destinatarios
      * @return 1 (Se comaprtio) | 2 (No se compartio)
      */
     public int share(Social socialNetwork,String id,ArrayList<String>userShareList) {
@@ -260,7 +257,6 @@ public class User {
             i++;
         }
         shareActiveUser.add(postAux);
-        System.out.println("Se compartio la publicacion con exito\n");
         return 1;
         
     }
@@ -313,8 +309,6 @@ public class User {
             Comment newComment = new Comment(newIdComment, userName, date, text, type, comment);
             commentList.add(newComment);
             commentActiveUser.add(newComment); //Se agrega a los comenatarios realizados por el usuario
-            System.out.println(commentActiveUser);
-            System.out.println("Se realizo un comentario con exito\n");
             return 1;
         }
 
@@ -329,7 +323,6 @@ public class User {
             Comment newComment = new Comment(newIdComment, userName, date, text, type, comment);
             commentList.add(newComment);
             commentActiveUser.add(newComment); //Se agrega a los comenatarios realizados por el usuario
-            System.out.println("Se realizo un comentario con exito\n");
             return 1;
         }
         return 0;
@@ -409,25 +402,25 @@ public class User {
     }
 
     /**
-     * Permite determinar si un usuario es seguidor del usuario activo
+     * Permite determinar si un usuario es seguido por usuario activo
      *
      * @param socialNetwork red social
      * @param user usuario a revisar
      * @return boolean 1(es seguido) | 2(no es seguido)
      */
-    public boolean isFollow(Social socialNetwork, String user) {
+    public int isFollowed(Social socialNetwork, String user) {
         //Se obtiene los usuarios que sigue el usuario activo
-        ArrayList<String> followList = socialNetwork.getActiveUser().get(0).getFollowersArrayList();
+        ArrayList<String> followedList = socialNetwork.getActiveUser().get(0).getFollowedArrayList();
         //Se verifica que el usuario ingresado no se siga nuevamente
         int j = 0;
         boolean isFollow = false;
-        while (j < followList.size()) {
-            if (followList.get(j).equals(user)) {
+        while (j < followedList.size()) {
+            if (followedList.get(j).equals(user)) {
                 isFollow = true;
-                break;
+                return 1;
             }
             j++;
         }
-        return isFollow;
+        return 0;
     }
 }
